@@ -1,0 +1,97 @@
+/* _____________ POLICE _____________ */
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a,
+ #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p {
+	font-family: 'Roboto';
+}
+
+
+/* ________________ MENU ______________ */
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+	color: white;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.navbar-nav {
+	margin-right: 80px;
+}
+
+.navbar-brand {
+	margin-left: 80px;
+}
+
+.nav-item {
+	margin-right: 40px;
+}
+
+/* _______________ INTRODUCTION ________________ */
+
+#introduction img {
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+}
+
+#introduction, #skills, #education, #contact {
+	margin-top: 40px;
+}
+
+#introduction h1, #introduction p {
+	text-align: center;
+}
+
+#introduction h1 {
+	font-size: 2.5em;
+}
+
+#introduction p {
+	font-size: 1.2em;
+}
+
+/* ___________________ CV __________________ */
+
+#skills, #education, #contact {
+	text-align: center;
+	padding: 45px 0 45px 0;
+}
+
+#skills, #contact {
+	background-color: #dfe6e9;
+}
+
+h2 {
+	color: #45aaf2;
+	font-size: 1.9em;
+}
+
+.fa-graduation-cap, .fa-code, .fa-comments .fa-2x{
+	margin-bottom: 30px;
+}
+
+h2:before, h2:after {
+	content:'';
+	width: 60px;
+	height: 0;
+	border-bottom: 1px black solid;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+/* __________________ FOOTER ________________ */
+
+footer {
+	background-color: #45aaf2;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+footer a {
+	color: white;
+	text-decoration: none;
+}

@@ -1,14 +1,17 @@
-{% extends "../layout.html.twig" %}
+{% extends "layout.html.twig" %}
 
 {% block body %}
 
-	<section>
-		<img src="" alt="" />
-		<h1>Charlotte Perution</h1>
-		<p>Développeuse web</p>
-		<p>descriptin</p>
+	<section id="introduction">
+			<div class="row">
+				<img class="col-sm-4" src="public/img/profil.jpg" alt="photo de profil" height="200px" width="200px" />
+				<div class="col-sm-8">
+					<h1>Charlotte Perution</h1>
+					<p><em>Développeuse web junior</em></p>
+					<p>Curieuse et passionnée par les nouvelles technologies, j'ai tout naturellement effectué une reconversion dans le domaine du développement web. L'apprentissage régulier dans ce domaine attise particulièrement ma curiosité à apprendre toujours de nouvelles choses. Je recherche aujourd'hui un poste de <strong>développeuse web.</strong></p>
+				</div>
+			</div>
 	</section>
-
 	{% block frontend_body %}
 	{% endblock %}
 
