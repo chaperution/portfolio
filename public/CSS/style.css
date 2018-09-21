@@ -1,7 +1,8 @@
 /* _____________ POLICE _____________ */
 
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a,
- #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p {
+ #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
+ span {
 	font-family: 'Roboto';
 }
 
@@ -29,9 +30,10 @@
 /* _______________ INTRODUCTION ________________ */
 
 #introduction img {
-	height: 300px;
-	width: 300px;
+	/*height: 300px;
+	width: 300px;*/
 	border-radius: 50%;
+	text-align: center;
 }
 
 #introduction, #skills, #education, #contact {
@@ -52,9 +54,9 @@
 
 /* ___________________ CV __________________ */
 
-#skills, #education, #contact {
+#skills, #education, #contact, #github {
 	text-align: center;
-	padding: 45px 0 45px 0;
+	padding: 25px 0 25px 0;
 }
 
 #skills, #contact {
@@ -66,8 +68,8 @@ h2 {
 	font-size: 1.9em;
 }
 
-.fa-graduation-cap, .fa-code, .fa-comments .fa-2x{
-	margin-bottom: 30px;
+.fa-graduation-cap, .fa-code, .fa-comments .fa-2x, .fa-github{
+	margin-bottom: 40px;
 }
 
 h2:before, h2:after {
@@ -80,7 +82,20 @@ h2:before, h2:after {
 }
 
 h3 {
-	font-size: 1.5em;
+	font-size: 1.7em;
+}
+
+#skills p, #education p, #contact p {
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+.row {
+	margin-bottom: 20px;
+}
+
+#contact span {
+	font-size: 1.4em;
 }
 
 /* __________________ FOOTER ________________ */
