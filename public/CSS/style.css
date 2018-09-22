@@ -1,6 +1,6 @@
 /* _____________ POLICE _____________ */
 
-.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a,
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
  #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
  span {
 	font-family: 'Roboto';
@@ -98,15 +98,27 @@ h3 {
 	font-size: 1.4em;
 }
 
+#contact a {
+	text-decoration: none;
+	color: #45aaf2;
+}
+
 /* __________________ FOOTER ________________ */
 
 footer {
 	background-color: #45aaf2;
 	padding: 20px;
 	margin-top: 20px;
+	text-align: center;
 }
 
-footer a {
+footer a, footer p {
 	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+footer a:hover {
+	color: #153348;
 	text-decoration: none;
 }
