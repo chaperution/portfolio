@@ -103,6 +103,14 @@ h3 {
 	color: #45aaf2;
 }
 
+#API {
+	border: 2px #dfe6e9 solid;
+	border-radius: 15px;
+	max-width: 500px;
+	text-align: center;
+	padding: 20px;
+}
+
 /* __________________ FOOTER ________________ */
 
 footer {
