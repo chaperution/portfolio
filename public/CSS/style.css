@@ -2,7 +2,7 @@
 
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
  #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
- span {
+ span, h4 {
 	font-family: 'Roboto';
 }
 
@@ -36,7 +36,7 @@
 	text-align: center;
 }
 
-#introduction, #skills, #education, #contact {
+#introduction, #skills, #education, #contact, #github {
 	margin-top: 40px;
 }
 
@@ -85,6 +85,12 @@ h3 {
 	font-size: 1.7em;
 }
 
+h4 {
+	font-weight: bold;
+	font-size: 1.5em;
+	
+}
+
 #skills p, #education p, #contact p {
 	font-size: 1.2em;
 	font-style: italic;
@@ -103,12 +109,15 @@ h3 {
 	color: #45aaf2;
 }
 
-#API {
+#profilAPI {
+	padding: 20px;
+}
+
+#eventsAPI {
 	border: 2px #dfe6e9 solid;
 	border-radius: 15px;
-	max-width: 500px;
-	text-align: center;
 	padding: 20px;
+	background-color: #dfe6e9;
 }
 
 /* __________________ FOOTER ________________ */
@@ -129,4 +138,8 @@ footer a, footer p {
 footer a:hover {
 	color: #153348;
 	text-decoration: none;
+}
+
+.fa-heart {
+	color: red;
 }
