@@ -54,13 +54,24 @@ function Github(userName, profilAPI, eventsAPI) {
 			// filtre les éléments selon le type
 			events = events.filter(function(el){ return el.type == "PushEvent"; });
 
+
+
 			for (i = 0; i < 5 && i < events.length; i++) {
+				// récupération de la date avec transformation au format FR
 				var dateEvent = document.createElement("em");
 				dateEvent.textContent = events[i].created_at;
 				dateEvent.style.fontFamily = "Roboto";
+				dateFormat = events[i].created_at.slice(0, 10);
+				hourFormat = events[i].created_at.slice(11, 16);
+				splitDate = dateFormat.split("-");
+				dateFr = splitDate[2] + ' ' + splitDate[1] + ' ' + splitDate[0] + ' à ' + hourFormat.replace(':', 'h');
+				dateEvent.textContent = dateFr;
+				
+
 
 				var nameRepo = document.createElement("p");
-				nameRepo.textContent = "Repository : " + events[i].repo.name;
+				nameRepo.innerHTML = "<i class='far fa-file-alt'></i>  ";
+				nameRepo.appendChild(document.createTextNode("Repository : " + events[i].repo.name));
 				nameRepo.style.fontFamily = "Roboto";
 				nameRepo.style.fontSize = "1.2em";
 				nameRepo.style.color = "#45aaf2";
@@ -79,12 +90,14 @@ function Github(userName, profilAPI, eventsAPI) {
 				eventsAPI.appendChild(messageEvent);	
 			}
 		});
-	}	
+	}
+
+	this.initProfil();
+	this.initEvents();	
 }
 
 var myGithub = new Github("chaperution", document.getElementById("profilAPI"), document.getElementById("eventsAPI"));
-myGithub.initProfil();
-myGithub.initEvents();
+
 
 
 //https://api.github.com/repos/chaperution/portfolio/events
