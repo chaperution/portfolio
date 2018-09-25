@@ -15,6 +15,9 @@ try {
 		if ($_GET['action'] == 'accueil') {
 			$frontendController->displayHome();
 		}
+		elseif ($_GET['action'] == 'listPosts') {
+			$frontendController->listPosts();
+		}
 	} else {
 		$frontendController->displayHome();
 	}

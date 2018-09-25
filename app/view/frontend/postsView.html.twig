@@ -1,0 +1,22 @@
+{% extends "frontend/layout.html.twig" %}
+
+{% block frontend_body %}
+
+	<section class="framePost">
+		<div class="post">
+		{% if posts %}
+			{% for post in posts %}
+			<h3>
+				{{ user.title }}
+				<em>le {{ user.creation_date }}</em>
+			</h3>
+			<div>
+				{{ user.content }}
+			</div>
+		{% else %}
+			<p>Ce billet n'existe pas.</p>
+		{% endif %}
+		</div>
+	</section>
+
+{% endblock %}
