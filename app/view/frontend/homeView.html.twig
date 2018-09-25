@@ -1,49 +1,82 @@
-{% extends "layout.html.twig" %}
+{% extends "frontend/layout.html.twig" %}
 
 {% block frontend_body %}
 
 	<section id="skills">
-		<h2>COMPÉTENCES</h2>
-		<div>
-			<h3>Langages</h3>
-			<p>HTML</p>
-			<p>CSS (Bootstrap)</p>
-			<p>Javascript</p>
-			<p>PHP (notions sur Symfony 3) et MySQL</p>
-		</div>
-		<div>
-			<h3>Outils</h3>
-			<p>CMS (Wordpress)</p>
-			<p>Git et Github</p>
-			<p>Sublim Text 3</p>
-		</div>
-		<div>
-			<h3>Savoir-être</h3>
-			<p>Sens de l'organisation</p>
-			<p>Capacité d'adaptation</p>
-			<p>Curiosité</p>
-			<p>Autonomie</p>
+		<h2> MES COMPÉTENCES </h2>
+		<i class="fas fa-code fa-2x"></i>
+		<div class="row">
+			<div class="col-sm-4">
+				<h3><i class="fas fa-angle-right"></i> Langages</h3>
+				<p>HTML</p>
+				<p>CSS (Bootstrap)</p>
+				<p>Javascript</p>
+				<p>PHP (notions sur Symfony 3) et MySQL</p>
+			</div>
+			<div class="col-sm-4">
+				<h3><i class="fas fa-angle-right"></i> Outils</h3>
+				<p>CMS (Wordpress)</p>
+				<p>Git et Github</p>
+				<p>Sublim Text 3</p>
+			</div>
+			<div class="col-sm-4">
+				<h3><i class="fas fa-angle-right"></i> Savoir-être</h3>
+				<p>Sens de l'organisation</p>
+				<p>Capacité d'adaptation</p>
+				<p>Curiosité</p>
+				<p>Autonomie</p>
+			</div>
 		</div>
 	</section>
 
 	<section id="education">
-		<h2>FORMATIONS</h2>
-		<div>
-			<h3>Développeur intégrateur en réalisation d'applications web - 2018</h3>
-			<p>OpenClassrooms</p>
-		</div>
-		<div>
-			<h3>Master 1 Droit public général - 2014</h3>
-			<p>Université Montpellier I</p>
-		</div>
-		<div>
-			<h3>Baccalauréat STG Communication et gestion des Ressources humaines - 2009</h3>
-			<p>Lycée privé Nevers, Montpellier</p>
+		<h2> MES FORMATIONS </h2>
+		<i class="fas fa-graduation-cap fa-2x"></i>
+		<div class="row">
+			<div class="col-lg-12">
+				<h3>Développeur intégrateur en réalisation d'applications web - 2018</h3>
+				<p>OpenClassrooms</p>
+			</div>
+			<div class="col-lg-12">
+				<h3>Master 1 Droit public général - 2014</h3>
+				<p>Université Montpellier I</p>
+			</div>
+			<div class="col-lg-12">
+				<h3>Baccalauréat STG Communication et gestion des Ressources humaines - 2009</h3>
+				<p>Lycée privé Nevers, Montpellier</p>
+			</div>
 		</div>
 	</section>
 
-	<section id="experience">
-		<h2>EXPÉRIENCES</h2>
+	<section id="contact">
+		<h2> CONTACT </h2>
+		<i class="fas fa-comments fa-2x"></i>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Si mon profil vous intéresse, contactez moi ! <i class="far fa-smile"></i></p>
+				<span>Par email : </span>
+				<p><em>cha.perution@gmail.com</em></p>
+				<span>Ou via le formulaire de contact qui se trouve <a href="#">ici</a> !</span>
+			</div>
+		</div>
+	</section>
+
+	<section id="github">
+		<h2> MON GITHUB </h2>
+		<i class="fab fa-github fa-2x"></i>
+		<div class="row justify-content-center">
+			<div class="col-lg-7 col-sm-4">
+				<h4>Mon profil</h4>
+				<div id="profilAPI">
+				</div>
+			</div>
+			<div class="col-lg-5 col-sm-8">
+				<h4>Mes derniers commits</h4>
+				<div id="eventsAPI">
+
+				</div>
+			</div>
+		</div>
 	</section>
 
 {% endblock %}

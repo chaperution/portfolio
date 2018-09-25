@@ -1,0 +1,146 @@
+/* _____________ POLICE _____________ */
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
+ #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
+ span, h4 {
+	font-family: 'Roboto';
+}
+
+
+/* ________________ MENU ______________ */
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+	color: white;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.navbar-nav {
+	margin-right: 80px;
+}
+
+.navbar-brand {
+	margin-left: 80px;
+}
+
+.nav-item {
+	margin-right: 40px;
+}
+
+/* _______________ INTRODUCTION ________________ */
+
+#introduction img {
+	/*height: 300px;
+	width: 300px;*/
+	border-radius: 50%;
+	text-align: center;
+}
+
+#introduction, #skills, #education, #contact, #github {
+	margin-top: 40px;
+}
+
+#introduction h1, #introduction p {
+	text-align: center;
+}
+
+#introduction h1 {
+	font-size: 2.5em;
+}
+
+#introduction p {
+	font-size: 1.2em;
+}
+
+/* ___________________ CV __________________ */
+
+#skills, #education, #contact, #github {
+	text-align: center;
+	padding: 25px 0 25px 0;
+}
+
+#skills, #contact {
+	background-color: #dfe6e9;
+}
+
+h2 {
+	color: #45aaf2;
+	font-size: 1.9em;
+}
+
+.fa-graduation-cap, .fa-code, .fa-comments .fa-2x, .fa-github{
+	margin-bottom: 40px;
+}
+
+h2:before, h2:after {
+	content:'';
+	width: 60px;
+	height: 0;
+	border-bottom: 1px black solid;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+h3 {
+	font-size: 1.7em;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 1.5em;
+
+}
+
+#skills p, #education p, #contact p {
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+.row {
+	margin: 0 0 20px 0;
+}
+
+#contact span {
+	font-size: 1.4em;
+}
+
+#contact a {
+	text-decoration: none;
+	color: #45aaf2;
+}
+
+#profilAPI {
+	padding: 20px;
+}
+
+#eventsAPI {
+	border: 2px #dfe6e9 solid;
+	border-radius: 15px;
+	padding: 20px;
+	background-color: #dfe6e9;
+}
+
+
+/* __________________ FOOTER ________________ */
+
+footer {
+	background-color: #45aaf2;
+	padding: 20px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+footer a, footer p {
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+footer a:hover {
+	color: #153348;
+	text-decoration: none;
+}
+
+.fa-heart {
+	color: red;
+}
