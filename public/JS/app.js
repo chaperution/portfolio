@@ -1,4 +1,4 @@
-// Ajout de l'API Github avec profil utilisateur
+// Ajout de l'API Github avec profil utilisateur et liste des 5 derniers commits
 
 function Github(userName, profilAPI, eventsAPI) {
 
@@ -31,7 +31,7 @@ function Github(userName, profilAPI, eventsAPI) {
 			locationElt.style.fontFamily = "Roboto";
 			locationElt.style.fontSize = "1.2em";
 
-			var reposElt = document.createElement("div");
+			var reposElt = document.createElement("p");
 			if (that.public_repos !== 0) {
 				reposElt.innerHTML = "<i class='far fa-file-alt'></i>  ";
 				reposElt.appendChild(document.createTextNode(event.public_repos + " repositories"));
@@ -54,8 +54,6 @@ function Github(userName, profilAPI, eventsAPI) {
 			// filtre les éléments selon le type
 			events = events.filter(function(el){ return el.type == "PushEvent"; });
 
-
-
 			for (i = 0; i < 5 && i < events.length; i++) {
 				// récupération de la date avec transformation au format FR
 				var dateEvent = document.createElement("em");
@@ -66,8 +64,6 @@ function Github(userName, profilAPI, eventsAPI) {
 				splitDate = dateFormat.split("-");
 				dateFr = splitDate[2] + ' ' + splitDate[1] + ' ' + splitDate[0] + ' à ' + hourFormat.replace(':', 'h');
 				dateEvent.textContent = dateFr;
-				
-
 
 				var nameRepo = document.createElement("p");
 				nameRepo.innerHTML = "<i class='far fa-file-alt'></i>  ";
@@ -77,7 +73,6 @@ function Github(userName, profilAPI, eventsAPI) {
 				nameRepo.style.color = "#45aaf2";
 
 				var commits = events[i].payload.commits;
-				console.log(commits);
 				for (a = 0; a < commits.length; a++) {
 					var messageEvent = document.createElement("p");
 					messageEvent.textContent = "Commit : " + commits[a].message;
@@ -91,13 +86,11 @@ function Github(userName, profilAPI, eventsAPI) {
 			}
 		});
 	}
-
 	this.initProfil();
 	this.initEvents();	
 }
 
 var myGithub = new Github("chaperution", document.getElementById("profilAPI"), document.getElementById("eventsAPI"));
-
 
 
 //https://api.github.com/repos/chaperution/portfolio/events

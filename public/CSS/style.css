@@ -97,7 +97,7 @@ h4 {
 }
 
 .row {
-	margin-bottom: 20px;
+	margin: 0 0 20px 0;
 }
 
 #contact span {
@@ -119,6 +119,7 @@ h4 {
 	padding: 20px;
 	background-color: #dfe6e9;
 }
+
 
 /* __________________ FOOTER ________________ */
 
