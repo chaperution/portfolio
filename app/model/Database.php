@@ -1,6 +1,6 @@
 <?php 
 
-namespace CP\portfolio;
+namespace CP\portfolio\model;
 
 Abstract class Database {
 	protected $db;
@@ -10,9 +10,9 @@ Abstract class Database {
 	private $_dbHost = 'localhost';
 
 	public function __construct() {
-		$db = new PDO('mysql:host='. $this->_dbHost . ';dbname='. $this->_dbName .';charset=utf8', $this->_dbUser, $this->_dbPass);
-		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$db = new \PDO('mysql:host='. $this->_dbHost . ';dbname='. $this->_dbName .';charset=utf8', $this->_dbUser, $this->_dbPass);
+		$db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-		return $db;
+		$this->db = $db;
 	}
 }

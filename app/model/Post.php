@@ -1,6 +1,6 @@
 <?php 
 
-namespace CP\Portfolio;
+namespace CP\Portfolio\model;
 
 class Post {
 

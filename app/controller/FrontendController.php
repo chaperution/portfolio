@@ -1,8 +1,8 @@
 <?php 
 
-namespace CP\Portfolio;
+namespace CP\Portfolio\controller;
 
-use \CP\Portfolio\PostManager;
+use \CP\Portfolio\model\PostManager;
 
 class FrontendController {
 	private $_twig;

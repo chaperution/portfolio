@@ -1,8 +1,8 @@
 <?php
 
 // autoload les 2 contrôleurs
-use \CP\Portfolio\FrontendController;
-require('app/controller/FrontendController.php'); 
+use \CP\Portfolio\controller\FrontendController;
+require __DIR__ . '/vendor/autoload.php';
 
 require_once('vendor/autoload.php');
 $loader = new \Twig_Loader_Filesystem('app/view');
