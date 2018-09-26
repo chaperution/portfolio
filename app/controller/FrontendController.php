@@ -3,6 +3,7 @@
 namespace CP\Portfolio\controller;
 
 use \CP\Portfolio\model\PostManager;
+use \CP\Portfolio\model\CommentManager;
 
 class FrontendController {
 	private $_twig;
@@ -27,11 +28,27 @@ class FrontendController {
 
 	public function post() {
 		$postManager = new PostManager();
+		$commentManager = new commentManager();
+
 		$post = $postManager->getPost($_GET['id']);
+		$comments = $commentManager->getComments($_GET['id']);
+
 		$template = $this->_twig->load('frontend/postView.html.twig');
 		echo $template->render(array(
 			'post' => $post,
+			'comments' => $comments,
 		));
 	}
 
+	public function addComment($id_post, $author, $content) {
+		$commentManager = new CommentManager();
+
+		$req = $commentManager->postComment($id_post, $author, $content);
+
+		if ($req === false) {
+			throw new Exception("Impossible d'ajouter le commentaire !");
+		} else {
+			header('Location: index.php?action=post&id=' . $postId . '#commentsFrame');
+		}
+	}
 }
