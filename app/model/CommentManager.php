@@ -7,7 +7,7 @@ class CommentManager extends Database {
 	// recupère les commentaires d'un post en fonction de son ID
     public function getComments($id_post)
     {
-        $comments = $this->db->prepare('SELECT id, id_post, author, content, DATE_FORMAT(comment_date, "%d/%m/%Y %H:%i:%s") AS date_fra FROM comments WHERE id_post = ? ORDER BY comment_date DESC');
+        $comments = $this->db->prepare('SELECT id, id_post, author, content, DATE_FORMAT(comment_date, "%d/%m/%Y") AS date_fra FROM comments WHERE id_post = ? ORDER BY comment_date DESC');
         $comments->execute(array($id_post));
 
         return $comments;

@@ -2,7 +2,8 @@
 
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
  #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
- span, h4, .framePost p, .post {
+ span, h4, .framePost p, .post, #commentsFrame p, #commentForm p, #commentForm label,
+ #commentForm button {
 	font-family: 'Roboto';
 }
 
@@ -122,7 +123,7 @@ h4 {
 
 /* ________________ PORTFOLIO _________________ */
 
-.framePost {
+.framePost, #commentsFrame {
  	margin: 60px 0 60px 0;
 }
 
@@ -131,7 +132,7 @@ h4 {
 	border-radius: 15px;
 }
 
-.head-full-post, #commentsFrame {
+.head-full-post, #commentsFrame, #commentForm {
 	text-align: center;
 }
 
@@ -180,23 +181,32 @@ figure:hover img {
 	transform: scale(1.2);
 }
 
-/*.btn:hover {
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary {
 	background-color: #45aaf2;
 	border: 1px #45aaf2 solid;
-}*/
+}
 
 .btn {
 	margin: 20px;
 }
 
-.post {
+.post, #commentsFrame p, #commentForm label, #commentForm p {
 	text-align: center;
 	font-size: 1.2em;
 	margin-top: 20px;
 }
 
-.return {
-	text-align: right;
+#commentForm textarea {
+	resize: vertical;
+	min-height: 200px;
+}
+
+.commentBlock {
+	border: 1px solid grey;
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 5px 5px 5px grey;
 }
 
 
