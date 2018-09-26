@@ -3,20 +3,31 @@
 {% block frontend_body %}
 
 	<section class="framePost">
-		<a href="index.php?action=listPosts" role="button" class="btn btn-primary btn-lg active" aria-pressed="true">Retour à la liste des projets</a>
 		<div class="row">
 			<div class="col-lg-12">
+				<a href="index.php?action=listPosts" role="button" class="btn btn-primary btn-lg active" aria-pressed="true">Retour à la liste des projets</a>
+			</div>
+		</div>
+		<div class="row" style="justify-content: space-around">
+			<div class="col-lg-6">
 				<div class="head-full-post">
 					<img src={{ post.post_image }} alt="" />
 					<h3>
 						{{ post.title }}
 					</h3>
+					<em>le {{ post.date_fr }}</em><br />
+	 				{% if post.date_fr < post.update_date_fr %}
+						<p id="updateDate">modifié le {{ post.update_date_fr }}</p>
+					{% endif %}
 				</div>
-				<div class="chapters">{{ post.content }}</div>
-				<em>le {{ post.date_fr }}</em><br />
- 				{% if post.date_fr < post.update_date_fr %}
-					<p id="updateDate">modifié le {{ post.update_date_fr }}</p>
-				{% endif %}
+				<div class="post">{{ post.content }}</div>
+			</div>
+		</div>
+		<div class="row" style="justify-content: space-around">
+			<div class="col-lg-12">
+				<div id="commentsFrame">
+					<h3>Commentaires : </h3>
+				</div>
 			</div>
 		</div>
 	</section>
