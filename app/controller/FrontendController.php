@@ -20,7 +20,18 @@ class FrontendController {
 		$postManager = new PostManager();
 		$posts = $postManager->getPosts();
 		$template = $this->_twig->load('frontend/postsView.html.twig');
-		echo $template->render();
+		echo $template->render(array(
+			'posts' => $posts,
+		));
+	}
+
+	public function post() {
+		$postManager = new PostManager();
+		$post = $postManager->getPost($_GET['id']);
+		$template = $this->_twig->load('frontend/postView.html.twig');
+		echo $template->render(array(
+			'post' => $post,
+		));
 	}
 
 }

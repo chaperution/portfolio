@@ -6,7 +6,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 require_once('vendor/autoload.php');
 $loader = new \Twig_Loader_Filesystem('app/view');
-$twig = new \Twig_Environment($loader, array('cache' => false));
+$twig = new \Twig_Environment($loader, array('cache' => false, 'debug' => true));
+$twig->addExtension(new Twig_Extension_Debug());
 
 $frontendController = new FrontendController($twig);
 
@@ -17,6 +18,13 @@ try {
 		}
 		elseif ($_GET['action'] == 'listPosts') {
 			$frontendController->listPosts();
+		}
+		elseif ($_GET['action'] == 'post') {
+			if (isset($_GET['id']) && $_GET['id'] > 0 && is_numeric($_GET['id'])) {
+				$frontendController->post();
+			} else {
+				throw new Exception('Aucun identifiant de billet envoyé');
+			}
 		}
 	} else {
 		$frontendController->displayHome();

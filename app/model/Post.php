@@ -9,6 +9,7 @@ class Post {
 	private $_content;
 	private $_creation_date;
 	private $_update_date;
+	private $_post_image;
 
 	// GETTERS
 
@@ -30,6 +31,10 @@ class Post {
 
 	public function update_date() {
 		return $this->_update_date;
+	}
+
+	public function post_image() {
+		return $this->_post_image;
 	}
 
 	// SETTERS
@@ -56,5 +61,9 @@ class Post {
 
 	public function setUpdate_date($update_date) {
 		$this->_update_date = $update_date;
+	}
+
+	public function setPost_image($post_image) {
+		$this->_post_image = $post_image;
 	}
 }
