@@ -5,7 +5,8 @@
     "autoload": {
     	"psr-4" : {
     		"CP\\Portfolio\\controller\\" : "app/controller/",
-    		"CP\\Portfolio\\model\\" : "app/model/"
+    		"CP\\Portfolio\\model\\" : "app/model/",
+    		"CP\\Portfolio\\config\\" : "config/"
     	}
     }
 }

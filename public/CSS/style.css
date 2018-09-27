@@ -3,7 +3,7 @@
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
  #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
  span, h4, .framePost p, .post, #commentsFrame p, #commentForm p, #commentForm label,
- #commentForm button {
+ #commentForm button, .formBlock label, .formBlock small, .formBlock button {
 	font-family: 'Roboto';
 }
 
@@ -21,7 +21,7 @@
 }
 
 .navbar-brand {
-	margin-left: 80px;
+	margin-left: 40px;
 }
 
 .nav-item {
@@ -168,7 +168,6 @@ figcaption
 	position: absolute;
 	bottom: 0;
 	text-align: center;
-	border-radius: 15px;
 	transition: background-color 1.5s;
 }
 
@@ -209,6 +208,12 @@ figure:hover img {
 	padding: 10px;
 	margin: 10px;
 	box-shadow: 5px 5px 5px grey;
+}
+
+/* _______________ LOGIN/SIGN ________________*/
+
+#loginFrame, #subscribeFrame {
+	margin: 60px;
 }
 
 

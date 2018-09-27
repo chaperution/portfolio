@@ -1,13 +1,17 @@
 <?php
 
+session_start();
+
 // autoload les 2 contrôleurs
 use \CP\Portfolio\controller\FrontendController;
+use \CP\Portfolio\config\Project_Twig_Extension;
 require __DIR__ . '/vendor/autoload.php';
 
 require_once('vendor/autoload.php');
 $loader = new \Twig_Loader_Filesystem('app/view');
 $twig = new \Twig_Environment($loader, array('cache' => false, 'debug' => true));
 $twig->addExtension(new Twig_Extension_Debug());
+$twig->addExtension(new Project_Twig_Extension());
 
 $frontendController = new FrontendController($twig);
 
@@ -38,7 +42,7 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
 	        }
 		}
-		elseif ($_GET['action'] == 'subsribe') {
+		elseif ($_GET['action'] == 'subscribe') {
 			$frontendController->displaySubscribe();
 		}
 		elseif ($_GET['action'] == 'addMember') {

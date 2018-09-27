@@ -38,6 +38,9 @@
 		</div>
 		<div class="row" style="justify-content: space-around">
 			<div class="col-lg-4">
+				{% if session is empty %}
+					'<div id="info">Pour me laisser un commentaire, veuillez vous <a href="index.php?action=login">connecter</a></div>'
+				{% else %}
 				<div id="commentForm">
 					<p>N'hésitez pas à me laisser un commentaire ! ;)</p>
 					<form action="index.php?action=addComment&amp;id={{ post.id }}" method="post">
@@ -48,6 +51,7 @@
 						<button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
 					</form>
 				</div>
+				{% endif %}
 			</div>
 		</div>
 	</section>

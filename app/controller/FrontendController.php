@@ -59,7 +59,7 @@ class FrontendController {
 	}
 
 	public function addMember($pseudo, $pass, $mail) {
-		$MemberManager = new MemberManager();
+		$memberManager = new MemberManager();
 
 		$usernameValidity = $memberManager->checkPseudo($pseudo);
 		$mailValidity = $memberManager->checkMail($mail);

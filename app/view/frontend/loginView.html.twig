@@ -1,0 +1,26 @@
+{% extends "frontend/layout.html.twig" %}
+
+{% block frontend_body %}
+
+	<section id="loginFrame">
+		<div class="row" style="justify-content: center">
+			<div class="col-lg-4">
+				<div class="formBlock">
+					<form action="index.php?action=loginSubmit" method="post">
+						<div class="form-group">
+							<label for="pseudo">Pseudo</label><br/>
+							<input type="text" class="form-control form-control-lg" name="pseudo" id="pseudo" required /></br>
+						</div>
+						<div class="form-group">
+							<label for="pass">Mot de passe</label><br />
+							<input type="password" class="form-control form-control-lg" name="pass" id="pass" required /></br>
+						</div>
+						<button type="submit" class="btn btn-primary btn-lg">Se connecter</button>
+					</form>
+					<a href="index.php?action=subscribe">Pas encore inscrit? C'est par ici ;)</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
