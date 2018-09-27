@@ -128,8 +128,9 @@ h4 {
 }
 
 .framePost img {
-	margin: 20px;
+	margin: 20px 0 20px 0;
 	border-radius: 15px;
+	max-width: 100%;
 }
 
 .head-full-post, #commentsFrame, #commentForm {
@@ -182,13 +183,14 @@ figure:hover img {
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
-.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary {
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle, .btn-primary {
 	background-color: #45aaf2;
 	border: 1px #45aaf2 solid;
 }
 
 .btn {
-	margin: 20px;
+	margin: 20px 5px 20px 5px;
 }
 
 .post, #commentsFrame p, #commentForm label, #commentForm p {
