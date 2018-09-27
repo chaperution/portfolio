@@ -38,6 +38,29 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
 	        }
 		}
+		elseif ($_GET['action'] == 'subsribe') {
+			$frontendController->displaySubscribe();
+		}
+		elseif ($_GET['action'] == 'addMember') {
+			if (!empty($_POST['pseudo']) && !empty($_POST['pass']) && !empty($_POST['pass_confirm']) && !empty($_POST['mail'])) {
+				if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
+					$frontendController->addMember(strip_tags($_POST['pseudo']), strip_tags($_POST['pass']), strip_tags($_POST['mail']));	
+				} else {
+					throw new Exception('Pas d\'adresse mail valide.');
+				}
+			} else {
+				throw new Exception('Tous les champs ne sont pas remplis !');
+			}
+		}
+		elseif ($_GET['action'] == 'login') {
+			$frontendController->displayLogin();
+		}
+		elseif ($_GET['action'] == 'loginSubmit') {
+			$frontendController->loginSubmit(strip_tags($_POST['pseudo']), strip_tags($_POST['pass']));
+		}
+		elseif ($_GET['action'] == 'logout') {
+			$frontendController->logout();
+		}
 	} else {
 		$frontendController->displayHome();
 	}

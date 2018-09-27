@@ -4,6 +4,7 @@ namespace CP\Portfolio\controller;
 
 use \CP\Portfolio\model\PostManager;
 use \CP\Portfolio\model\CommentManager;
+use \CP\Portfolio\model\MemberManager;
 
 class FrontendController {
 	private $_twig;
@@ -50,5 +51,75 @@ class FrontendController {
 		} else {
 			header('Location: index.php?action=post&id=' . $postId . '#commentsFrame');
 		}
+	}
+
+	public function displaySubscribe() {
+		$template = $this->_twig->load('frontend/subscribeView.html.twig');
+		echo $template->render();
+	}
+
+	public function addMember($pseudo, $pass, $mail) {
+		$MemberManager = new MemberManager();
+
+		$usernameValidity = $memberManager->checkPseudo($pseudo);
+		$mailValidity = $memberManager->checkMail($mail);
+
+		if ($usernameValidity) {
+			header('Location: index.php?action=subscribe&error=invalidUsername');	
+		}
+
+		if ($mailValidity) {
+			header('Location: index.php?action=subscribe&error=invalidMail');
+		}
+
+		if (!$usernameValidity && !$mailValidity) {
+			if ($_POST['pass'] == $_POST['pass_confirm']) {
+				// Hachage du mot de passe
+				$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+				
+				$newMember = $memberManager->createMember($pseudo, $pass, $mail);
+				
+				// redirige vers page d'accueil avec le nouveau paramètre
+				header('Location: index.php?account-status=account-successfully-created');
+			} else {
+				header('Location: index.php?action=subscribe&error=pass');
+			}
+		}	
+	}
+
+	public function loginSubmit($pseudo, $pass) {
+		$memberManager = new MemberManager();
+
+		$member = $memberManager->loginMember($pseudo);
+
+		$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
+
+		if (!$member) {
+	        header('Location: index.php?action=login&account-status=unsuccess-login');
+	    }
+	    else {
+	    	if ($isPasswordCorrect) {
+	    		$_SESSION['id'] = $member['id'];
+	    		$_SESSION['pseudo'] = ucfirst(strtolower($pseudo));
+	    		$_SESSION['groups_id'] = $member['groups_id'];
+	    		header('Location: index.php');
+	    	}
+	        else {
+	        	header('Location: index.php?action=login&account-status=unsuccess-login');
+	        }
+	    }
+	}
+
+	public function displayLogin() {
+		$template = $this->_twig->load('frontend/loginView.html.twig');
+		echo $template->render();
+	}
+
+	public function logout() {
+		$_SESSION = array();
+		setcookie(session_name(), '', time() - 42000);
+		session_destroy();
+
+		header('Location: index.php?logout=success');
 	}
 }

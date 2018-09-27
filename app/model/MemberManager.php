@@ -22,4 +22,22 @@ class MemberManager extends Database {
 
         return $newMember;
     }	
+
+    // recherche dans la table members si le pseudo est déjà existant
+    public function checkPseudo($pseudo) {
+		$req = $this->db->prepare('SELECT pseudo FROM members WHERE pseudo = ?');
+		$req->execute(array($pseudo));
+		$usernameValidity = $req->fetch();
+
+		return $usernameValidity;
+	}
+
+    // recherche dans la table members si le mail est déjà existant
+	public function checkMail($mail) {
+		$req = $this->db->prepare('SELECT mail FROM members WHERE mail = ?');
+		$req->execute(array($mail));
+		$mailValidity = $req->fetch();
+
+		return $mailValidity;
+	}
 }
