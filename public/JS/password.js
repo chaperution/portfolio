@@ -14,7 +14,7 @@ form.addEventListener("submit", function(e) {
 				e.preventDefault();
 			}
 		} else {
-			message = "Erreur : Le mot de passe doit contenir au moins 6 caractères.";
+			message = "Erreur : Le mot de passe doit contenir au moins 8 caractères.";
 			e.preventDefault();
 		}
 	} else {
