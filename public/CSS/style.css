@@ -4,7 +4,7 @@
  #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
  span, h4, .framePost p, .post, #commentsFrame p, #commentForm p, #commentForm label,
  #commentForm button, .formBlock label, .formBlock small, .formBlock button, .formBlock a,
- #infoMdp, #error, #success, p {
+ #infoMdp, #error, #success, p, .cPageFrame, .pageBlock {
 	font-family: 'Roboto';
 }
 
@@ -209,6 +209,41 @@ figure:hover img {
 	padding: 10px;
 	margin: 10px;
 	box-shadow: 5px 5px 5px grey;
+}
+
+#info {
+	font-size: 1.2em;
+	text-align: center;
+	font-weight: bold;
+}
+
+.cPageFrame {
+	background-color: transparent;
+	color: black;
+	border: 1px solid #45aaf2;
+}
+
+.cPageFrame, .pageBlock {
+	padding: 10px;
+	margin: 5px;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.pageBlock {
+	background-color: #45aaf2;
+	color: white;
+}
+
+.pageBlock:hover {
+	text-decoration: none;
+	color: black;
+}
+
+#pageFrame {
+	padding: 20px;
+	text-align: center;
 }
 
 /* _______________ LOGIN/SIGN ________________*/

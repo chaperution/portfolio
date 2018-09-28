@@ -5,9 +5,12 @@ namespace CP\Portfolio\controller;
 use \CP\Portfolio\model\PostManager;
 use \CP\Portfolio\model\CommentManager;
 use \CP\Portfolio\model\MemberManager;
+use \CP\Portfolio\model\Pagination;
 
 class FrontendController {
 	private $_twig;
+	private $_commentsPerPage = 5;
+	
 
 	public function __construct($twig) {
 		$this->_twig = $twig;
@@ -29,15 +32,27 @@ class FrontendController {
 
 	public function post() {
 		$postManager = new PostManager();
-		$commentManager = new commentManager();
+		$commentManager = new CommentManager();
+		$pagination = new Pagination();
+
+		$nbComments = $pagination->getCommentsPagination($_GET['id']);
+		$nbPage = $pagination->getCommentsPages($nbComments, $this->_commentsPerPage);
+
+		if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $nbPage) {
+				$cPage = (intval($_GET['page']) - 1) * $this->_commentsPerPage;
+			}
+		else {
+			$cPage = 0;
+		}
 
 		$post = $postManager->getPost($_GET['id']);
-		$comments = $commentManager->getComments($_GET['id']);
+		$comments = $commentManager->getComments($_GET['id'], $cPage, $this->_commentsPerPage);
 
 		$template = $this->_twig->load('frontend/postView.html.twig');
 		echo $template->render(array(
 			'post' => $post,
 			'comments' => $comments,
+			'nbPage' => $nbPage,
 		));
 	}
 

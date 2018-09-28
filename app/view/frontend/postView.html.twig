@@ -36,10 +36,27 @@
 				</div>
 			</div>
 		</div>
+	
+		{% if nbPage >= 2 %}
+		<div class="row">
+			<div class="col-lg-12">
+				<div id="pageFrame">
+					{% for i in 1..nbPage %}
+						{% if (get.page is empty and i == 1) or (get.page is defined and get.page == i) %}
+							<span class='cPageFrame'>{{ i }}</span>
+						{% else %}
+							<a class='pageBlock' href="index.php?action=post&amp;id={{ post.id }}&amp;page={{ i }}#commentsFrame">{{ i }}</a>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	
 		<div class="row" style="justify-content: space-around">
 			<div class="col-lg-4">
 				{% if session is empty %}
-					<div id="info">Pour me laisser un commentaire, veuillez vous <a href="index.php?action=login">connecter</a></div>
+					<div id="info">Pour me laisser un commentaire, veuillez vous <a href="index.php?action=login">connecter</a>.</div>
 				{% else %}
 				<div id="commentForm">
 					<p>N'hésitez pas à me laisser un commentaire ! ;)</p>
