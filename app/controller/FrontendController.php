@@ -80,9 +80,7 @@ class FrontendController {
 				$newMember = $memberManager->createMember($pseudo, $pass, $mail);
 				
 				// redirige vers page d'accueil avec le nouveau paramètre
-				header('Location: index.php?account-status=account-successfully-created');
-			} else {
-				header('Location: index.php?action=subscribe&error=pass');
+				header('Location: index.php?accountStatus=account-successfully-created');
 			}
 		}	
 	}
@@ -95,7 +93,7 @@ class FrontendController {
 		$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
 
 		if (!$member) {
-	        header('Location: index.php?action=login&account-status=unsuccess-login');
+	        header('Location: index.php?action=login&accountStatus=unsuccess-login');
 	    }
 	    else {
 	    	if ($isPasswordCorrect) {
@@ -104,7 +102,7 @@ class FrontendController {
 	    		header('Location: index.php');
 	    	}
 	        else {
-	        	header('Location: index.php?action=login&account-status=unsuccess-login');
+	        	header('Location: index.php?action=login&accountStatus=unsuccess-login');
 	        }
 	    }
 	}

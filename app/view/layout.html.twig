@@ -48,6 +48,12 @@
 	</header>
 	<body>
 		<div class="container">
+			{% if get.accountStatus and get.accountStatus == 'account-successfully-created' %}
+				<p id="success">Votre compte a bien été créé. <a href="index.php?action=login">Se connecter</a></p>
+			{% endif %}
+			{% if get.logout and get.logout == 'success' %}
+				<p id="success">Vous êtes bien deconnecté.</p>
+			{% endif %}
 
 	{% block body %}
 	{% endblock %}
@@ -75,7 +81,7 @@
 	</footer>
 	<script src="public/JS/ajax.js"></script>
 	<script src="public/JS/app.js"></script>
-	
+	<script src="public/JS/flashMessage.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>

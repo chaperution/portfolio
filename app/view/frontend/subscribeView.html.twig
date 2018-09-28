@@ -6,6 +6,12 @@
 		<div class="row" style="justify-content: center">
 			<div class="col-lg-4">
 				<p id="infoMdp"></p>
+				{% if get.error and get.error == 'invalidUsername' %}
+					<p id="error">Pseudo déjà utilisé.</p>
+				{% endif %}
+				{% if get.error and get.error == 'invalidMail' %}
+					<p id="error">Adresse email déjà utilisée.</p>
+				{% endif %}
 				<div class="formBlock">
 					<form action="index.php?action=addMember" method="post">
 						<div class="form-group">
