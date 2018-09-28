@@ -66,6 +66,9 @@ try {
 		elseif ($_GET['action'] == 'logout') {
 			$frontendController->logout();
 		}
+		elseif ($_GET['action'] == 'privacy') {
+			$frontendController->displayPrivacy();
+		}
 	} else {
 		$frontendController->displayHome();
 	}

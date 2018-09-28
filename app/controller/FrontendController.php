@@ -119,4 +119,9 @@ class FrontendController {
 
 		header('Location: index.php?logout=success');
 	}
+
+	public function displayPrivacy(){
+		$template = $this->_twig->load('frontend/privacyView.html.twig');
+		echo $template->render();
+	}
 }

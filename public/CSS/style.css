@@ -4,7 +4,7 @@
  #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
  span, h4, .framePost p, .post, #commentsFrame p, #commentForm p, #commentForm label,
  #commentForm button, .formBlock label, .formBlock small, .formBlock button, .formBlock a,
- #infoMdp, #error, #success {
+ #infoMdp, #error, #success, p {
 	font-family: 'Roboto';
 }
 
@@ -56,7 +56,7 @@
 
 /* ___________________ CV __________________ */
 
-#skills, #education, #contact, #github {
+#skills, #education, #contact, #github, #privacyFrame {
 	text-align: center;
 	padding: 25px 0 25px 0;
 }
