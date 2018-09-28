@@ -3,7 +3,8 @@
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
  #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
  span, h4, .framePost p, .post, #commentsFrame p, #commentForm p, #commentForm label,
- #commentForm button, .formBlock label, .formBlock small, .formBlock button {
+ #commentForm button, .formBlock label, .formBlock small, .formBlock button, .formBlock a,
+ #infoMdp {
 	font-family: 'Roboto';
 }
 
@@ -213,7 +214,23 @@ figure:hover img {
 /* _______________ LOGIN/SIGN ________________*/
 
 #loginFrame, #subscribeFrame {
-	margin: 60px;
+	margin: 50px;
+}
+
+.formBlock a {
+	text-decoration: none;
+	color: black;
+	font-size: 1.2em;
+}
+
+.formBlock a:hover {
+	color: #45aaf2;
+}
+
+#infoMdp {
+	color: red;
+	font-weight: bold;
+	font-size: 1.1em;
 }
 
 

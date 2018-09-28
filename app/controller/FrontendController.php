@@ -41,10 +41,10 @@ class FrontendController {
 		));
 	}
 
-	public function addComment($id_post, $author, $content) {
+	public function addComment($postId, $author, $content) {
 		$commentManager = new CommentManager();
 
-		$req = $commentManager->postComment($id_post, $author, $content);
+		$req = $commentManager->postComment($postId, $author, $content);
 
 		if ($req === false) {
 			throw new Exception("Impossible d'ajouter le commentaire !");
@@ -101,7 +101,6 @@ class FrontendController {
 	    	if ($isPasswordCorrect) {
 	    		$_SESSION['id'] = $member['id'];
 	    		$_SESSION['pseudo'] = ucfirst(strtolower($pseudo));
-	    		$_SESSION['groups_id'] = $member['groups_id'];
 	    		header('Location: index.php');
 	    	}
 	        else {

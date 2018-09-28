@@ -5,6 +5,7 @@ session_start();
 // autoload les 2 contrôleurs
 use \CP\Portfolio\controller\FrontendController;
 use \CP\Portfolio\config\Project_Twig_Extension;
+
 require __DIR__ . '/vendor/autoload.php';
 
 require_once('vendor/autoload.php');
@@ -32,7 +33,7 @@ try {
 		}
 		elseif ($_GET['action'] == 'addComment') {
 			if (isset($_GET['id']) && $_GET['id'] > 0) {
-	            if (!empty($_SESSION['pseudo']) && !empty($_POST['comment'])) {
+	            if (!empty($_SESSION['pseudo']) && !empty($_POST['content'])) {
 	                $frontendController->addComment($_GET['id'], $_SESSION['pseudo'], $_POST['content']);
 	            }
 	            else {

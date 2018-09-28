@@ -14,10 +14,10 @@ class CommentManager extends Database {
     }
 
     // ajoute un nouveau commentaire dans la table comments en fonction de l'ID du post
-    public function postComment($id_post, $author, $content)
+    public function postComment($postId, $author, $content)
     {
         $comments = $this->db->prepare('INSERT INTO comments(id_post, author, content, comment_date) VALUES(?, ?, ?, NOW())');
-        $req = $comments->execute(array($id_post, $author, $content));
+        $req = $comments->execute(array($postId, $author, $content));
 
         return $req;
     }
