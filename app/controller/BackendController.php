@@ -26,6 +26,8 @@ class BackendController {
 		if (isset($_POST['pass']) AND $_POST['pass'] == "TESTCHA") {
 			header('Location: index.php?action=admin');
 		} else {
+			// possible de resaisir le mdp après 1 seconde
+			sleep(1);
 			header('Location: index.php?action=admin-login-view&accountStatus=unsuccess-login');
 		}
 	}
@@ -34,7 +36,7 @@ class BackendController {
 	public function displayAdmin() {
 		$postManager = new PostManager(); 
 		$memberManager = new MemberManager();
-		$pagination = new Pagination();
+		//$pagination = new Pagination();
 
 		/*$nbPosts = $pagination->getPostsPagination();
 		$nbPage = $pagination->getPostsPages($nbPosts, $postsPerPage);
