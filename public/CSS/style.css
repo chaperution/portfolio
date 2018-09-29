@@ -246,6 +246,21 @@ figure:hover img {
     border-color: #c3e6cb;
 }
 
+/* ___________________ DASHBOARD ___________________ */
+
+#dashboard img {
+	border-radius: 50%;
+	max-width: 100%;
+}
+
+#dashboard{
+	margin: 50px 0 50px 0;
+}
+
+#dashboard h1 {
+	margin: 20px 0 20px 0;
+}
+
 
 /* __________________ FOOTER ________________ */
 
