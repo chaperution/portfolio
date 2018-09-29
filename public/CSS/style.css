@@ -305,3 +305,7 @@ footer a:hover {
 .fa-heart {
 	color: red;
 }
+
+#privacyFrame {
+	padding: 100px;
+}
