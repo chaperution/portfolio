@@ -41,4 +41,9 @@ class MemberManager extends Database {
 		return $mailValidity;
 	}
 
+    public function getMembers() {
+        $req = $this->db->query('SELECT id, pseudo, DATE_FORMAT(subscribe_date, "%d/%m/%Y") AS date_fr FROM members ORDER BY subscribe_date DESC');
+        return $req;
+    }
+
 }

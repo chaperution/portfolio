@@ -35,8 +35,8 @@ class BackendController {
 	// affiche la page d'administration
 	public function displayAdmin() {
 		$postManager = new PostManager(); 
-		$memberManager = new MemberManager();
 		$commentManager = new CommentManager();
+		$memberManager = new MemberManager();
 		//$pagination = new Pagination();
 
 		/*$nbPosts = $pagination->getPostsPagination();
@@ -52,14 +52,13 @@ class BackendController {
 		
 	    $posts = $postManager->getPosts();
 	    $comments = $commentManager->getAllComments();
-	 
-	    //$members = $memberManager->getMembers();
+	    $members = $memberManager->getMembers();
 
 		$template = $this->_twig->load('backend/adminView.html.twig');
 		echo $template->render(array(
 			'posts' => $posts,
 			'comments' => $comments,
-			//'members' => $members,
+			'members' => $members,
 		));
 	}
 	
