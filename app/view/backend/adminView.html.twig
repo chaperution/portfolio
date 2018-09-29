@@ -5,6 +5,87 @@
 	<section id="dashboard">
 		<div class="row">
 			<div class="col-lg-12">
+				<a role="button" class="btn btn-primary btn-lg active" href="index.php?action=createPost">Ajouter un projet</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<div id="postManage">
+					<h3>Gestion des projets</h3>
+					{% if posts is defined %}
+						{% for post in posts %}
+					<div class="listPanel">
+						<p><a class="linkAdmin" href="index.php?action=updatePost&amp;id={{ post.id }}">{{ post.title}}</a></p>
+						<button class="report removePost"><i class="fas fa-trash-alt"></i></button>
+							<!--<div id="postModal<?= $countPost ?>" class="modal">
+								<div class="modalContent">
+									<p>Voulez-vous vraiment supprimer l'article <em><?= $data['title']; ?></em> ?</p>
+									<a class="confirmDelete" href="index.php?action=deletePost&amp;id=<?= $data['id']; ?>">Oui</a>
+									<span id="closePostModal<?= $countPost++ ?>" class="closeModal">Non</span>
+								</div>
+							</div>-->
+						<a class="report" href="index.php?action=updatePost&amp;id={{ post.id }}"><i class="fas fa-edit"></i></a>
+						<p><em>{{ post.date_fr }}</em></p>
+						{% if post.date_fr < post.update_date_fr %}
+							<p><em>modifié le post.update_fra_fr</em></p>
+						{% endif %}
+					</div>
+						{% endfor %}
+					{% else %}
+						<p>Pas de projets !</p>
+					{% endif %}
+				</div>	
+			</div>
+		<!--</div>
+		<div class="row">-->
+			<div class="col-lg-4">
+				<div id="commentManage">
+					<h3>Gestion des commentaires</h3>
+					{% if comments is defined %}
+						{% for comment in comments %}
+					<div class="listPanel">
+						<p>{{ comment.author }}</p>
+						<p><em>{{ comment.date_fr }}</em></p>
+						<p class="linkProject"><a href="{{ globals.root }}index.php?action=post&amp;id={{ comment.id_post }}#commentsFrame" >Projet lié</a></p>
+						<button class="report removeComment"><i class="fas fa-trash-alt"></i></button>
+							<!--<div id="reportModal<?= $countReport ?>" class="modal">
+								<div class="modalContent">
+									<p>Voulez-vous vraiment supprimer le commentaire de <em><?= $report['author']; ?></em> ?</p>
+									<a class="confirmDelete" href="index.php?action=deleteComment&amp;id=<?= $report['comment_id']; ?>">Oui</a>
+									<span id="closeCommentModal<?= $countReport++ ?>" class="closeModal">Non</span>
+								</div>
+							</div>
+						<p class="nbReports"><?= $report['nb_reports']; ?> signalements</p>-->
+						<p>{{ comment.content }}</p>	
+					</div>
+						{% endfor %}
+					{% else %}
+						<p>Pas de commentaires !</p>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div id="memberManage">
+					<h3>Gestion des membres</h3>
+					{% if members is defined %}
+						{% for member in members %}
+					<div class="listPanel">
+						<p>{{ member.pseudo }}</p>
+						<p>Date d'inscription : <em>{{ member.subscribe_date }}</em></p>
+						<button class="report removeMember"><i class="fas fa-trash-alt"></i></button>
+							<!--<div id="reportModal<?= $countReport ?>" class="modal">
+								<div class="modalContent">
+									<p>Voulez-vous vraiment supprimer le commentaire de <em><?= $report['author']; ?></em> ?</p>
+									<a class="confirmDelete" href="index.php?action=deleteComment&amp;id=<?= $report['comment_id']; ?>">Oui</a>
+									<span id="closeCommentModal<?= $countReport++ ?>" class="closeModal">Non</span>
+								</div>
+							</div>-->	
+					</div>
+						{% endfor %}
+					{% else %}
+						<p>Pas de membres !</p>
+					{% endif %}
+				</div>
 			</div>
 		</div>
 	</section>

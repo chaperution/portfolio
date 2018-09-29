@@ -40,4 +40,5 @@ class MemberManager extends Database {
 
 		return $mailValidity;
 	}
+
 }
