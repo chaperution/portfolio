@@ -3,7 +3,6 @@
 session_start();
 
 use \CP\Portfolio\controller\FrontendController;
-use \CP\Portfolio\controller\BackendController;
 use \CP\Portfolio\config\Project_Twig_Extension;
 
 require __DIR__ . '/vendor/autoload.php';
@@ -15,7 +14,9 @@ $twig->addExtension(new Twig_Extension_Debug());
 $twig->addExtension(new Project_Twig_Extension());
 
 $frontendController = new FrontendController($twig);
-$backendController = new BackendController($twig);
+
+// pour les chemins
+$root = '';
 
 try {
 	if (isset($_GET['action'])) {
@@ -69,11 +70,6 @@ try {
 		}
 		elseif ($_GET['action'] == 'privacy') {
 			$frontendController->displayPrivacy();
-		}
-		elseif ($_GET['action'] == 'admin-login-view') {
-			//if (isset($_SESSION)) {
-				$backendController->displayLoginAdmin();
-			//}
 		}
 	} else {
 		$frontendController->displayHome();

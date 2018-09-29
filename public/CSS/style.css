@@ -1,10 +1,9 @@
 /* _____________ POLICE _____________ */
 
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
- #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
- span, h4, .framePost p, .post, #commentsFrame p, #commentForm p, #commentForm label,
- #commentForm button, .formBlock label, .formBlock small, .formBlock button, .formBlock a,
- #infoMdp, #error, #success, p {
+h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .framePost p, 
+.post, #commentsFrame p, #commentForm p, #commentForm label, #commentForm button, .formBlock label,
+ .formBlock small, .formBlock button, .formBlock a, #infoMdp, #error, #success, p {
 	font-family: 'Roboto';
 }
 
@@ -248,16 +247,16 @@ figure:hover img {
 
 /* ___________________ DASHBOARD ___________________ */
 
-#dashboard img {
+#dashboardLogin img {
 	border-radius: 50%;
 	max-width: 100%;
 }
 
-#dashboard{
+#dashboardLogin {
 	margin: 50px 0 50px 0;
 }
 
-#dashboard h1 {
+#dashboardLogin h1 {
 	margin: 20px 0 20px 0;
 }
 
