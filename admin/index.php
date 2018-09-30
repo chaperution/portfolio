@@ -62,6 +62,9 @@ try {
 		elseif ($_GET['action'] == 'submitUpdate') {
 			$backendController->submitUpdate($_POST['title'], $_POST['content'], $_GET['id'], $_FILES['upload']['name']);
 		}
+		elseif ($_GET['action'] == 'deleteComment') {
+			$backendController->removeComment($_GET['id']);
+		}
 	} else {
 		$backendController->displayLoginAdmin();
 	}

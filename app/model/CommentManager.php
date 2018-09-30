@@ -26,4 +26,12 @@ class CommentManager extends Database {
 
         return $req;
     }
+
+     // supprime un commentaire dans la table comments en fonction de son ID
+    public function deleteComment($commentId) {
+        $req = $this->db->prepare('DELETE FROM comments WHERE id = ?');
+        $deletedComment = $req->execute(array($commentId));
+
+        return $deletedComment;
+    }
 }

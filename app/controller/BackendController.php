@@ -173,5 +173,14 @@ class BackendController {
 
 		Header('Location: index.php?action=admin&update-status=success');
 	}
+
+	// permet la modération d'un commentaire signalé
+	public function removeComment($commentId) {
+		$commentManager = new CommentManager();
+
+		$deletedComment = $commentManager->deleteComment($commentId);
+
+		Header('Location: index.php?action=admin&remove-comment=success');
+	}
 	
 }
