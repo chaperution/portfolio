@@ -183,4 +183,12 @@ class BackendController {
 		Header('Location: index.php?action=admin&remove-comment=success');
 	}
 	
+	// permet de supprimer un membre
+	public function removeMember($memberId) {
+		$memberManager = new MemberManager();
+
+		$deletedMember = $memberManager->deleteMember($memberId);
+
+		Header('Location: index.php?action=admin&remove-member=success');	
+	}
 }

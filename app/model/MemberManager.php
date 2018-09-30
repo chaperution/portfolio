@@ -46,4 +46,12 @@ class MemberManager extends Database {
         return $req;
     }
 
+    // supprime un membre dans la table
+    public function deleteMember($memberId) {
+        $req = $this->db->prepare('DELETE FROM members WHERE id = ?');
+        $deletedMember = $req->execute(array($memberId));
+
+        return $deletedMember;
+    }
+
 }

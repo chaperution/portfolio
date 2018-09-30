@@ -65,6 +65,9 @@ try {
 		elseif ($_GET['action'] == 'deleteComment') {
 			$backendController->removeComment($_GET['id']);
 		}
+		elseif ($_GET['action'] == 'deleteMember') {
+			$backendController->removeMember($_GET['id']);
+		}
 	} else {
 		$backendController->displayLoginAdmin();
 	}
