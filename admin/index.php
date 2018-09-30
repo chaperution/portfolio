@@ -50,6 +50,18 @@ try {
 		elseif ($_GET['action'] == 'deletePost') {
 			$backendController->removePost($_GET['id']);
 		}
+		elseif ($_GET['action'] == 'updatePost') {
+			if (isset($_GET['id']) && $_GET['id'] > 0) {
+				if (isset($_SESSION)) {
+					$backendController->displayUpdate();
+				}  
+	        } else {
+				throw new Exception('Projet non trouvé.');
+			}
+		}
+		elseif ($_GET['action'] == 'submitUpdate') {
+			$backendController->submitUpdate($_POST['title'], $_POST['content'], $_GET['id'], $_FILES['upload']['name']);
+		}
 	} else {
 		$backendController->displayLoginAdmin();
 	}

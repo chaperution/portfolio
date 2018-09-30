@@ -117,5 +117,61 @@ class BackendController {
 
 		Header('Location: index.php?action=admin&remove-post=success');
 	}
+
+	public function displayUpdate() {
+		$postManager = new PostManager();
+
+		$post = $postManager->getPost($_GET['id']);
+
+		$template = $this->_twig->load('backend/updatePostView.html.twig');
+		echo $template->render(array(
+			'post' => $post, 
+		));
+	}
+
+	public function submitUpdate($title, $content, $postId, $post_image) {
+		$postManager = new PostManager();
+
+		$result = $postManager->updatePost($title, $content, $postId);
+		if ($result !== false) {
+			if (isset($_FILES['upload'])  AND !empty($_FILES['upload']['name'])){
+				// supprime l'ancien fichier
+	        	foreach (glob($GLOBALS['root']. "public/img/upload/" .$postId .".*") as $filename) 
+					unlink($filename);
+				$maxSize = 2097152; // 2Mo
+				$validExtensions = array('jpg', 'jpeg', 'png');
+				if ($_FILES['upload']['size'] <= $maxSize) {
+					$extensionUpload = strtolower(substr(strrchr($_FILES['upload']['name'], '.'), 1));
+					if (in_array($extensionUpload, $validExtensions)) {
+							$root = "../public/img/upload/" . $postId . "." . $extensionUpload;
+							$result = move_uploaded_file($_FILES['upload']['tmp_name'], $root);
+							if ($result) {
+								$update = $postManager->updatePostImage($postId, $postId.".".$extensionUpload);
+								if ($udpate !== false)
+								{
+								Header('Location: index.php?action=admin&new-post=success');
+								}
+								else 
+								{
+									Header('Location: index.php?action=admin&new-post=error');
+								}
+							} else {
+								Header('Location: index.php?action=admin&new-post=error-import');
+							}
+					} else {
+						Header('Location: index.php?action=createPost&error=format');
+					}
+				} else {
+					Header('Location: index.php?action=createPost&error=size');
+				}
+			}	
+		}
+		else 
+		{
+			// Erreur requête
+		}
+
+		Header('Location: index.php?action=admin&update-status=success');
+	}
 	
 }

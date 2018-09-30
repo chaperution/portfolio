@@ -38,7 +38,7 @@
 						<a class="report" href="index.php?action=updatePost&amp;id={{ post.id }}"><i class="fas fa-edit"></i></a>
 						<p><em>{{ post.date_fr }}</em></p>
 						{% if post.date_fr < post.update_date_fr %}
-							<p><em>modifié le post.update_fra_fr</em></p>
+							<p><em>modifié le {{ post.update_date_fr}}</em></p>
 						{% endif %}
 					</div>
 						{% endfor %}

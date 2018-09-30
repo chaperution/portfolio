@@ -1,0 +1,33 @@
+{% extends "backend/layout.html.twig" %}
+
+{% block backend_body %}
+
+<section id="updatePost">
+	<div class="row">
+		<div class="col-lg-12">
+			<div id="managerBlock">
+				<a role="button" class="btn btn-primary btn-lg active" href="index.php?action=admin">Retour au menu</a>
+				<div id="formBlock">
+					<form action="index.php?action=submitUpdate&amp;id={{ post.id }}" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="title">Titre : </label>
+							<input type="text" class="form-control" name="title" id="title" value="{{ post.title }}" /><br/>
+						</div>
+						<img class="imgBdd" src="public/img/upload/{{ post.post_image }}" />
+						<div class="form-group">
+							<label for="image">Image :</label>
+							<input type="file" name="upload" class="form-control-file" id="image">
+						</div>
+						<div class="form-group">
+							<textarea name="content" class="form-control" rows="25">{{ post.content|raw }}</textarea>
+						</div>
+						<button type="submit" class="btn btn-primary btn-lg">Poster</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+{% endblock %}

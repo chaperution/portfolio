@@ -38,10 +38,22 @@ class PostManager extends Database {
         return $update;
     }
 
+    // envoie la modification du post en fonction de son ID et en ajoutant une date de modification
+    public function updatePost($title, $content, $postId) {
+        $req = $this->db->prepare('UPDATE posts SET title = ?, content = ?, update_date = NOW() WHERE id = ?');
+        $updated = $req->execute(array($title, $content, $postId));
+
+        return $updated;
+    }
+
     // supprime un post selon son ID dans la table Post
     public function deletePost($postId) {
         $req = $this->db->prepare('DELETE FROM posts WHERE id = ?');
         $deletedPost = $req->execute(array($postId));
+
+        foreach (glob($GLOBALS['root']. "public/img/upload/" .$postId .".*") as $filename) {
+		    unlink($filename);
+		}
 
         return $deletedPost;
     }
