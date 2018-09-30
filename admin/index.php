@@ -47,6 +47,9 @@ try {
 				throw new Exception('Contenu vide !');
 			}
 		}
+		elseif ($_GET['action'] == 'deletePost') {
+			$backendController->removePost($_GET['id']);
+		}
 	} else {
 		$backendController->displayLoginAdmin();
 	}

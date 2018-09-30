@@ -109,5 +109,13 @@ class BackendController {
 			}
 		}	
 	}
+
+	public function removePost($postId) {
+		$postManager = new PostManager();
+
+		$deletedPost = $postManager->deletePost($postId);
+
+		Header('Location: index.php?action=admin&remove-post=success');
+	}
 	
 }
