@@ -11,7 +11,7 @@
 		<div class="row" style="justify-content: space-around">
 			<div class="col-lg-6">
 				<div class="head-full-post">
-					<img src={{ post.post_image }} alt="" />
+					<img src="public/img/upload/{{ post.post_image }}" alt="" />
 					<h3>
 						{{ post.title }}
 					</h3>
@@ -20,7 +20,7 @@
 						<p id="updateDate">modifié le {{ post.update_date_fr }}</p>
 					{% endif %}
 				</div>
-				<div class="post">{{ post.content }}</div>
+				<div class="post">{{ post.content|raw }}</div>
 			</div>
 		</div>
 		<div class="row" style="justify-content: space-around">

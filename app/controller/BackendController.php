@@ -61,5 +61,53 @@ class BackendController {
 			'members' => $members,
 		));
 	}
+
+	public function displayCreatePost() {
+		$template = $this->_twig->load('backend/createPostView.html.twig');
+		echo $template->render();
+	}
+
+	// permet la création d'un nouveau post avec ajout de l'image
+	public function newPost($title, $content, $post_image) {
+		$postManager = new PostManager();
+
+		if (isset($_FILES['upload'])  AND !empty($_FILES['upload']['name'])){
+			$maxSize = 2097152; // 2Mo
+			$validExtensions = array('jpg', 'jpeg', 'png');
+			if ($_FILES['upload']['size'] <= $maxSize) {
+				$extensionUpload = strtolower(substr(strrchr($_FILES['upload']['name'], '.'), 1));
+				if (in_array($extensionUpload, $validExtensions)) {
+					$id = $postManager->createPost($title, $content);
+					if ($id !== false)
+					{
+						$root = "../public/img/upload/" . $id . "." . $extensionUpload;
+						$result = move_uploaded_file($_FILES['upload']['tmp_name'], $root);
+						if ($result) {
+							$update = $postManager->updatePostImage($id, $id.".".$extensionUpload);
+							if ($udpate !== false)
+							{
+							Header('Location: index.php?action=admin&new-post=success');
+							}
+							else 
+							{
+								$deletePost = $postManager->deletePost($id);
+								Header('Location: index.php?action=admin&new-post=error');
+							}
+						} else {
+							Header('Location: index.php?action=admin&new-post=error-import');
+						}
+					}
+					else 
+					{
+						// Erreur requête
+					}
+				} else {
+					Header('Location: index.php?action=createPost&error=format');
+				}
+			} else {
+				Header('Location: index.php?action=createPost&error=size');
+			}
+		}	
+	}
 	
 }

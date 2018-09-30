@@ -3,7 +3,7 @@
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
 h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .framePost p, 
 .post, #commentsFrame p, #commentForm p, #commentForm label, #commentForm button, .formBlock label,
- .formBlock small, .formBlock button, .formBlock a, #infoMdp, #error, #success, p {
+ .formBlock small, .formBlock button, .form-group label, .formBlock a, #infoMdp, #error, #success, p {
 	font-family: 'Roboto';
 }
 
@@ -287,13 +287,9 @@ figure:hover img {
 	text-decoration: none;
 }
 
-.fa-user-times, .fa-trash-alt, .fa-edit {
+.fa-trash-alt, .fa-edit {
 	font-size: 1.4em;
 	margin:0 5px;
-}
-
-.fa-user-times {
-	color: #2e86de;
 }
 
 .fa-trash-alt {

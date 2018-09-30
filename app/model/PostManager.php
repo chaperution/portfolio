@@ -17,4 +17,33 @@ class PostManager extends Database {
         $post = $req->fetch();
         return $post;
 	}
+
+	// création d'un nouveau post dans la table Post
+    public function createPost($title, $content) {
+        $req = $this->db->prepare('INSERT INTO posts(title, content, creation_date, update_date) VALUES (?, ?, NOW(), NOW())');
+        $newPost = $req->execute(array($title, $content));
+
+        if ($newPost === false) {
+        	return false;
+        }
+
+        return $this->db->lastInsertId();
+    }
+
+	// insertion de l'image liée au post
+    public function updatePostImage($id, $post_image) {
+        $req = $this->db->prepare('UPDATE posts SET post_image = ? WHERE id = ?');
+        $update = $req->execute(array($post_image, $id));
+
+        return $update;
+    }
+
+    // supprime un post selon son ID dans la table Post
+    public function deletePost($postId) {
+        $req = $this->db->prepare('DELETE FROM posts WHERE id = ?');
+        $deletedPost = $req->execute(array($postId));
+
+        return $deletedPost;
+    }
+
 }
