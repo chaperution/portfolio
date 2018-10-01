@@ -20,14 +20,14 @@ class BackendController {
 		$_SESSION = array();
 		setcookie(session_name(), '', time() - 42000);
 		session_destroy();
-		
+
 		$template = $this->_twig->load('backend/adminLoginView.html.twig');
 		echo $template->render();
 	}
 
 	// permet la connexion au panneau d'administration
 	public function loginAdmin() {
-		if (isset($_POST['pass']) AND $_POST['pass'] == "TESTCHA") {
+		if (isset($_POST['pass']) AND $_POST['pass'] == "TESTCha34.") {
 			header('Location: index.php?action=admin');
 		} else {
 			// possible de resaisir le mdp après 1 seconde
@@ -91,7 +91,7 @@ class BackendController {
 					}
 					else 
 					{
-						// Erreur requête
+						Header('Location: index.php?action=admin&request=error');
 					}
 				} else {
 					Header('Location: index.php?action=createPost&error=format');
@@ -131,9 +131,9 @@ class BackendController {
 	        	foreach (glob($GLOBALS['root']. "public/img/upload/" .$postId .".*") as $filename) 
 					unlink($filename);
 				$maxSize = 2097152; // 2Mo
-				$validExtensions = array('jpg', 'jpeg', 'png');
 				if ($_FILES['upload']['size'] <= $maxSize) {
 					$extensionUpload = strtolower(substr(strrchr($_FILES['upload']['name'], '.'), 1));
+					$validExtensions = array('jpg', 'jpeg', 'png');
 					if (in_array($extensionUpload, $validExtensions)) {
 							$root = "../public/img/upload/" . $postId . "." . $extensionUpload;
 							$result = move_uploaded_file($_FILES['upload']['tmp_name'], $root);
@@ -151,19 +151,19 @@ class BackendController {
 								Header('Location: index.php?action=admin&updateStatus=error-import');
 							}
 					} else {
-						Header('Location: index.php?action=updatePost&' .$postId. 'error=format');
+						Header('Location: index.php?action=updatePost&id=' .$postId. '&error=format');
 					}
 				} else {
-					Header('Location: index.php?action=updatePost&' .$postId. 'error=size');
+					Header('Location: index.php?action=updatePost&id=' .$postId. '&error=size');
 				}
 			}	
+			else
+				Header('Location: index.php?action=admin&updateStatus=success');
 		}
 		else 
 		{
-			// Erreur requête
+			Header('Location: index.php?action=admin&request=error');
 		}
-
-		Header('Location: index.php?action=admin&updateStatus=success');
 	}
 
 	// permet la modération d'un commentaire signalé

@@ -25,6 +25,9 @@
 		{% elseif get.removeMember and get.removeMember == 'success' %}
 			<p id="success">Le membre a bien été supprimé.</p>
 		{% endif %}
+		{% if get.request and get.request == 'error' %}
+			<p id="error">La requête a échoué.</p>
+		{% endif %}
 		
 		<div class="row">
 			<div class="col-lg-12">

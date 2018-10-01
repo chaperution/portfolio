@@ -10,7 +10,7 @@ use \CP\Portfolio\model\Pagination;
 class FrontendController {
 	private $_twig;
 	private $_commentsPerPage = 3;
-	private $_myMail = "cha.perution@gmail.com";
+	private $_myMail = "contact@charlotteperution.fr";
 	private $_subjectMail = "CONTACT - Portfolio charlotteperution.fr";
 	private $_headerFrom = 'From:"charlotteperution.fr"<support@charlotteperution.fr>';
 	
