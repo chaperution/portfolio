@@ -4,12 +4,12 @@
 
 	<section class="framePost">
 		<div class="row" style="justify-content: space-around">
-			<div class="col-lg-2">
+			<div class="col-lg-2 col-md-12">
 				<a href="index.php?action=listPosts" role="button" class="btn btn-primary btn-lg active" aria-pressed="true">Retour à la liste des projets</a>
 			</div>
 		</div>
 		<div class="row" style="justify-content: space-around">
-			<div class="col-lg-6">
+			<div class="col-lg-6 col-md-12">
 				<div class="head-full-post">
 					<img src="public/img/upload/{{ post.post_image }}" alt="" />
 					<h3>
@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class="row" style="justify-content: space-around">
-			<div class="col-lg-6">
+			<div class="col-lg-6 col-md-12">
 				<div id="commentsFrame">
 					<h3>Commentaires : </h3>
 					{% for comment in comments %}
@@ -54,7 +54,7 @@
 		{% endif %}
 	
 		<div class="row" style="justify-content: space-around">
-			<div class="col-lg-4">
+			<div class="col-lg-4 col-md-12">
 				{% if session is empty %}
 					<div id="info">Pour me laisser un commentaire, veuillez vous <a href="index.php?action=login">connecter</a>.</div>
 				{% else %}

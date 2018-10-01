@@ -56,7 +56,7 @@ h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .fra
 
 /* ___________________ CV __________________ */
 
-#skills, #education, #contact, #github, #privacyFrame, #contactFrame h2 {
+#skills, #education, #contact, #github, #privacyFrame, #contactFrame h3 {
 	text-align: center;
 	padding: 25px 0 25px 0;
 }
@@ -85,6 +85,7 @@ h2:before, h2:after {
 
 h3 {
 	font-size: 1.7em;
+	font-weight: bold;
 }
 
 h4 {
@@ -378,4 +379,231 @@ footer a:hover {
 
 #privacyFrame {
 	padding: 100px;
+}
+
+/* __________________________ RESPONSIVE _________________________ */
+
+
+/* ___________________MOBILE___________________ */
+
+@media all and (max-width: 768px) {
+	/* ________________ MENU ______________ */
+
+	.navbar-brand {
+		margin-left: 0;
+	}
+
+	/* _______________ INTRODUCTION ________________ */
+
+	#introduction h1 {
+		font-size: 2em;
+	}
+
+	#introduction p {
+		font-size: 1.1em;
+	}
+
+	/* ___________________ CV __________________ */
+
+	h2 {
+		font-size: 1.4em;
+	}
+
+	.fa-graduation-cap, .fa-code, .fa-comments .fa-2x, .fa-github{
+		margin-bottom: 25px;
+	}
+
+	h2:before, h2:after {
+		width: 20px;
+	}
+
+	h3 {
+		font-size: 1.2em;
+	}
+
+	h4 {
+		font-size: 1.2em;
+	}
+
+	#skills p, #education p, #contact p {
+		font-size: 1.2em;
+		font-style: italic;
+	}
+
+	#contact span {
+		font-size: 1.2em;
+	}
+
+	/* ________________ PORTFOLIO _________________ */
+
+	.framePost, #commentsFrame {
+	 	margin: 25px 0 25px 0;
+	}
+
+	.framePost img {
+		margin: 10px 0 10px 0;
+	}
+
+	.head-full-post h3 {
+		font-size: 2em;
+	}
+
+	.projets h3 {
+		font-size: 1.5em;
+	}
+
+	.btn {
+		margin: 10px 5px 10px 5px;
+	}
+
+	#commentForm textarea {
+		min-height: 100px;
+	}
+
+	#pageFrame {
+		padding: 10px;
+	}
+
+	/* _______________ LOGIN/SIGN ________________*/
+
+	#loginFrame, #subscribeFrame {
+		margin: 20px;
+	}
+
+	.formBlock a {
+		font-size: 1em;
+	}
+
+	/* ___________________ DASHBOARD ___________________ */
+
+	#dashboardLogin {
+		margin: 50px 20px 0;
+	}
+
+	#dashboardLogin h1 {
+		font-size: 1.6em;
+	}
+
+	#postManage h3, #commentManage h3, #memberManage h3 {
+		font-size: 1.4em;
+	}
+
+	.fa-trash-alt, .fa-edit {
+		font-size: 1.2em;
+	}
+
+	.imgBdd {
+		max-width: 100%;
+	}
+
+	/* __________________ FOOTER ________________ */
+
+	footer {
+		padding: 10px;
+	}
+
+	footer a, footer p {
+		font-size: 1.1em;
+	}
+
+	#privacyFrame {
+		padding: 0;
+	}
+
+}
+
+/* _________________TABLETTE_________________ */
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	/* ___________________ CV __________________ */
+
+	h2:before, h2:after {
+		width: 40px;
+	}
+
+	/* ________________ PORTFOLIO _________________ */
+
+	.framePost, #commentsFrame {
+	 	margin: 30px 0 30px 0;
+	}
+
+	.projets h3 {
+		font-size: 1.7em;
+	}
+
+	#commentForm textarea {
+		min-height: 150px;
+	}
+	
+	.head-full-post img {
+		max-width: 70%;
+	}
+
+	/* ___________________ DASHBOARD ___________________ */
+
+	#dashboardLogin h1 {
+		font-size: 2em;
+	}
+
+	#postManage h3, #commentManage h3, #memberManage h3 {
+		font-size: 1.6em;
+	}
+
+	.imgBdd {
+		max-width: 100%;
+	}
+
+	/* __________________ FOOTER ________________ */
+
+	footer {
+		padding: 10px;
+	}
+
+	#privacyFrame {
+		padding: 20px;
+	}
+}
+
+/* _______________ LAPTOP ________________ */
+
+@media all and (min-width: 1024px) and (max-width: 1250px){
+	/* ________________ MENU ______________ */
+
+	.navbar-nav {
+		margin-right: 0;
+	}
+
+	.navbar-brand {
+		margin-left: 20px;
+	}
+
+	.nav-item {
+		margin-right: 20px;
+	}
+
+	/* ________________ PORTFOLIO _________________ */
+
+	.projets h3 {
+		font-size: 1.8em;
+	}
+	
+	.head-full-post img {
+		max-width: 100%;
+	}
+
+	#commentForm textarea {
+		min-height: 200px;
+	}
+
+	/* ___________________ DASHBOARD ___________________ */
+
+	.imgBdd {
+		max-width: 100%;
+	}
+
+	/* __________________ FOOTER ________________ */
+
+	#privacyFrame {
+		padding: 50px;
+	}
 }
