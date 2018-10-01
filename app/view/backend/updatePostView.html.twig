@@ -8,6 +8,11 @@
 			<div id="managerBlock">
 				<a role="button" class="btn btn-primary btn-lg active" href="index.php?action=admin">Retour au menu</a>
 				<div id="formBlock">
+					{% if get.error and get.error == 'format' %}
+						<p id="error">La photo ne doit pas dépasser 2Mo.</p>
+					{% elseif get.error and get.error == 'size' %}
+						<p id="error">La photo doit être au format jpg, jpeg ou png.</p>
+					{% endif %}
 					<form action="index.php?action=submitUpdate&amp;id={{ post.id }}" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="title">Titre : </label>

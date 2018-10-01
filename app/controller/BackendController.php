@@ -86,15 +86,15 @@ class BackendController {
 							$update = $postManager->updatePostImage($id, $id.".".$extensionUpload);
 							if ($udpate !== false)
 							{
-							Header('Location: index.php?action=admin&new-post=success');
+							Header('Location: index.php?action=admin&newPost=success');
 							}
 							else 
 							{
 								$deletePost = $postManager->deletePost($id);
-								Header('Location: index.php?action=admin&new-post=error');
+								Header('Location: index.php?action=admin&newPost=error');
 							}
 						} else {
-							Header('Location: index.php?action=admin&new-post=error-import');
+							Header('Location: index.php?action=admin&newPost=error-import');
 						}
 					}
 					else 
@@ -115,7 +115,7 @@ class BackendController {
 
 		$deletedPost = $postManager->deletePost($postId);
 
-		Header('Location: index.php?action=admin&remove-post=success');
+		Header('Location: index.php?action=admin&removePost=success');
 	}
 
 	public function displayUpdate() {
@@ -149,20 +149,20 @@ class BackendController {
 								$update = $postManager->updatePostImage($postId, $postId.".".$extensionUpload);
 								if ($udpate !== false)
 								{
-								Header('Location: index.php?action=admin&new-post=success');
+								Header('Location: index.php?action=admin&updateStatus=success');
 								}
 								else 
 								{
-									Header('Location: index.php?action=admin&new-post=error');
+									Header('Location: index.php?action=admin&updateStatus=error');
 								}
 							} else {
-								Header('Location: index.php?action=admin&new-post=error-import');
+								Header('Location: index.php?action=admin&updateStatus=error-import');
 							}
 					} else {
-						Header('Location: index.php?action=createPost&error=format');
+						Header('Location: index.php?action=updatePost&' .$postId. 'error=format');
 					}
 				} else {
-					Header('Location: index.php?action=createPost&error=size');
+					Header('Location: index.php?action=updatePost&' .$postId. 'error=size');
 				}
 			}	
 		}
@@ -171,7 +171,7 @@ class BackendController {
 			// Erreur requête
 		}
 
-		Header('Location: index.php?action=admin&update-status=success');
+		Header('Location: index.php?action=admin&updateStatus=success');
 	}
 
 	// permet la modération d'un commentaire signalé
@@ -180,7 +180,7 @@ class BackendController {
 
 		$deletedComment = $commentManager->deleteComment($commentId);
 
-		Header('Location: index.php?action=admin&remove-comment=success');
+		Header('Location: index.php?action=admin&removeComment=success');
 	}
 	
 	// permet de supprimer un membre
@@ -189,6 +189,6 @@ class BackendController {
 
 		$deletedMember = $memberManager->deleteMember($memberId);
 
-		Header('Location: index.php?action=admin&remove-member=success');	
+		Header('Location: index.php?action=admin&removeMember=success');	
 	}
 }

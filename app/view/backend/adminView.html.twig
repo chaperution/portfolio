@@ -4,19 +4,25 @@
 
 	<section id="dashboard">
 
-		{% if get.new-post and get.new-post == 'error-import' %}
+		{% if get.newPost and get.newPost == 'import' %}
+			<p id="error">Erreur durant l'importation de la photo.</p>
+		{% elseif get.updateStatus and get.updateStatus == 'error-import' %}
 			<p id="error">Erreur durant l'importation de la photo.</p>
 		{% endif %}
-		{% if get.new-post and get.new-post == 'error' %}
+		{% if get.newPost and get.newPost == 'error' %}
 			<p id="error">Le nouveau projet n'a pas pu être ajouté.</p>
+		{% elseif get.updateStatus and get.updateStatus == 'error' %}
+			<p id="error">Le projet n'a pas pu être modifié.</p>
 		{% endif %}
-		{% if get.new-post and get.new-post == 'success' %}
+		{% if get.newPost and get.newPost == 'success' %}
 			<p id="success">Le nouveau projet a bien été ajouté.</p>
-		{% elseif get.remove-post and get.remove-post == 'success' %}
+		{% elseif get.updateStatus and get.updateStatus == 'success' %}
+			<p id="success">Le projet a bien été modifié.</p>
+		{% elseif get.removePost and get.removePost == 'success' %}
 			<p id="success">Le projet a bien été supprimé.</p>
-		{% elseif get.remove-comment and get.remove-comment == 'success' %}
+		{% elseif get.removeComment and get.removeComment == 'success' %}
 			<p id="success">Le commentaire a bien été supprimé.</p>
-		{% elseif get.remove-member and get.remove-member == 'success' %}
+		{% elseif get.removeMember and get.removeMember == 'success' %}
 			<p id="success">Le membre a bien été supprimé.</p>
 		{% endif %}
 		

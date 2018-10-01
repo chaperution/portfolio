@@ -27,18 +27,10 @@ try {
 			$backendController->loginAdmin();
 		}
 		elseif ($_GET['action'] == 'admin') {
-			if (isset($_SESSION['id'])) {
-				$backendController->displayAdmin();
-			} else {
-				throw new Exception("Vous devez vous connecter !");
-			}
+			$backendController->displayAdmin();
 		}
 		elseif ($_GET['action'] == 'createPost') {
-			if (isset($_SESSION['id'])) {
-				$backendController->displayCreatePost();
-			} else {
-				throw new Exception("Vous devez vous connecter !");
-			}
+			$backendController->displayCreatePost();
 		}
 		elseif ($_GET['action'] == 'submitPost') {
 			if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['upload']['name'])) {
