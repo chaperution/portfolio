@@ -56,7 +56,7 @@ h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .fra
 
 /* ___________________ CV __________________ */
 
-#skills, #education, #contact, #github, #privacyFrame {
+#skills, #education, #contact, #github, #privacyFrame, #contactFrame h2 {
 	text-align: center;
 	padding: 25px 0 25px 0;
 }

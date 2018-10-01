@@ -9,7 +9,6 @@ use \CP\Portfolio\model\MemberManager;
 class BackendController {
 
 	private $_twig;
-	private $_commentsPerPage = 6;
 
 	public function __construct($twig) {
 		$this->_twig = $twig;
@@ -17,6 +16,11 @@ class BackendController {
 
 	// affiche la page de connexion au panneau d'administration
 	public function displayLoginAdmin() {
+		// détruis la session en cours lorsque l'on veut accéder à la page Administration
+		$_SESSION = array();
+		setcookie(session_name(), '', time() - 42000);
+		session_destroy();
+		
 		$template = $this->_twig->load('backend/adminLoginView.html.twig');
 		echo $template->render();
 	}
@@ -37,18 +41,6 @@ class BackendController {
 		$postManager = new PostManager(); 
 		$commentManager = new CommentManager();
 		$memberManager = new MemberManager();
-		//$pagination = new Pagination();
-
-		/*$nbPosts = $pagination->getPostsPagination();
-		$nbPage = $pagination->getPostsPages($nbPosts, $postsPerPage);
-
-		if (!isset($_GET['page'])) {
-			$cPage = 0;
-		} else {
-			if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $nbPage) {
-				$cPage = (intval($_GET['page']) - 1) * $postsPerPage;
-			}
-		}*/
 		
 	    $posts = $postManager->getPosts();
 	    $comments = $commentManager->getAllComments();

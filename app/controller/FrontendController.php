@@ -9,7 +9,10 @@ use \CP\Portfolio\model\Pagination;
 
 class FrontendController {
 	private $_twig;
-	private $_commentsPerPage = 5;
+	private $_commentsPerPage = 3;
+	private $_myMail = "cha.perution@gmail.com";
+	private $_subjectMail = "CONTACT - Portfolio charlotteperution.fr";
+	private $_headerFrom = 'From:"charlotteperution.fr"<support@charlotteperution.fr>';
 	
 
 	public function __construct($twig) {
@@ -138,5 +141,45 @@ class FrontendController {
 	public function displayPrivacy(){
 		$template = $this->_twig->load('frontend/privacyView.html.twig');
 		echo $template->render();
+	}
+
+	public function displayContact() {
+		$template = $this->_twig->load('frontend/contactView.html.twig');
+		echo $template->render();
+	}
+
+	public function sendContact() {
+		if (isset($_POST['mailform'])) {
+			if (!empty($_POST['nom']) && !empty($_POST['mail']) && !empty($_POST['message'])) {
+				// Récupération des variables et sécurisation des données
+				// htmlentities() convertit des caractères "spéciaux" en équivalent HTML
+				$nom     = htmlentities($_POST['nom']); 
+				$email   = htmlentities($_POST['mail']);
+				$message = htmlentities($_POST['message']);
+
+				$header = "MIME-Version: 1.0\r\n";
+				$header.= $this->_headerFrom."\n";
+				$header.='Content-Type:text/html; charset="utf-8"'."\n";
+				$header.='Content-Tranfer-Encoding: 8bit';
+
+				$message = '
+					<html>
+						<body>
+							<div align="center">
+								<p>Nom de l\'expéditeur :</p>' .$_POST['nom'].'<br />
+								<p>Adresse mail de l\'expéditeur :</p>' .$_POST['mail'].'<br />
+								'.nl2br($_POST['message']).'
+							</div>
+						</body>
+					</html>
+				';
+
+				mail($this->_myMail, $this->_subjectMail , $message, $header);
+
+				header('Location: index.php?action=contact&sendContact=success');
+			} else {
+				header('Location: index.php?action=contact&sendContact=error');
+			}
+		}		
 	}
 }

@@ -71,6 +71,12 @@ try {
 		elseif ($_GET['action'] == 'privacy') {
 			$frontendController->displayPrivacy();
 		}
+		elseif ($_GET['action'] == 'contact') {
+			$frontendController->displayContact();
+		}
+		elseif ($_GET['action'] == 'sendContact') {
+			$frontendController->sendContact();
+		}
 	} else {
 		$frontendController->displayHome();
 	}
