@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule	^public/((?:\w|/|\.)*)$	../public/$1	[L]	
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile C:\wamp64\www\portfolio\admin\.htpasswd
+Require valid-user

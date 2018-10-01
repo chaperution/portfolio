@@ -1,10 +1,10 @@
 /* _____________ POLICE _____________ */
 
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, footer a, footer p,
- #introduction h1, #introduction p, h2, h3, #skills p, #education p, #contact p,
- span, h4, .framePost p, .post, #commentsFrame p, #commentForm p, #commentForm label,
- #commentForm button, .formBlock label, .formBlock small, .formBlock button, .formBlock a,
- #infoMdp, #error, #success, p, .cPageFrame, .pageBlock {
+h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .framePost p, 
+.post, #commentsFrame p, #commentForm p, #commentForm label, #commentForm button, .formBlock label,
+ .formBlock small, .formBlock button, .form-group label, .formBlock a, #infoMdp, #error, #success, p,
+ .cPageFrame, .pageBlock {
 	font-family: 'Roboto';
 }
 
@@ -279,6 +279,76 @@ figure:hover img {
 	color: #155724; 
 	background-color: #d4edda;
     border-color: #c3e6cb;
+}
+
+/* ___________________ DASHBOARD ___________________ */
+
+#dashboardLogin img {
+	border-radius: 50%;
+	max-width: 100%;
+}
+
+#dashboardLogin {
+	margin: 50px 0 50px 0;
+}
+
+#dashboardLogin h1 {
+	margin: 20px 0 20px 0;
+}
+
+#postManage, #commentManage, #memberManage {
+	padding: 20px;
+	color: #222f3e;
+	font-size: 1.1em;
+}
+
+#postManage h3, #commentManage h3, #memberManage h3 {
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #45aaf2;
+}
+
+.listPanel {
+	margin: 10px 0 10px 0;
+	border: 1px solid grey;
+	padding: 10px;
+	box-shadow: 5px 5px 5px grey;
+}
+
+.listPanel:hover {
+	background-color: #dfe6e9;
+}
+
+.listPanel a {
+	text-decoration: none;
+}
+
+.fa-trash-alt, .fa-edit {
+	font-size: 1.4em;
+	margin:0 5px;
+}
+
+.fa-trash-alt {
+	color: red;
+}
+
+.fa-edit {
+	color: #2ecc71;
+}
+
+.removeComment, .removePost, .removeMember {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.linkProject, .removeComment {
+	float: right;
+}
+
+.imgBdd {
+	width: 350px;
+	text-align: center;
 }
 
 

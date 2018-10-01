@@ -13,6 +13,11 @@ class CommentManager extends Database {
         return $comments;
     }
 
+    public function getAllComments() {
+        $comments = $this->db->query('SELECT id, id_post, author, content, DATE_FORMAT(comment_date, "%d/%m/%Y %H:%i:%s") AS date_fr FROM comments ORDER BY comment_date DESC');
+        return $comments;
+    }
+
     // ajoute un nouveau commentaire dans la table comments en fonction de l'ID du post
     public function postComment($postId, $author, $content)
     {
@@ -20,5 +25,13 @@ class CommentManager extends Database {
         $req = $comments->execute(array($postId, $author, $content));
 
         return $req;
+    }
+
+     // supprime un commentaire dans la table comments en fonction de son ID
+    public function deleteComment($commentId) {
+        $req = $this->db->prepare('DELETE FROM comments WHERE id = ?');
+        $deletedComment = $req->execute(array($commentId));
+
+        return $deletedComment;
     }
 }

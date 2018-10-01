@@ -2,7 +2,6 @@
 
 session_start();
 
-// autoload les 2 contrôleurs
 use \CP\Portfolio\controller\FrontendController;
 use \CP\Portfolio\config\Project_Twig_Extension;
 
@@ -15,6 +14,9 @@ $twig->addExtension(new Twig_Extension_Debug());
 $twig->addExtension(new Project_Twig_Extension());
 
 $frontendController = new FrontendController($twig);
+
+// pour les chemins
+$root = '';
 
 try {
 	if (isset($_GET['action'])) {
