@@ -11,6 +11,24 @@ class Post {
 	private $_update_date;
 	private $_post_image;
 
+	public function __construct(array $donnees)
+  	{
+    	$this->hydrate($donnees);
+  	}
+
+  	// hydratation
+	public function hydrate(array $donnees)
+	{
+	    foreach ($donnees as $key => $value)
+	    {
+	      	$method = 'set'.ucfirst($key);
+	      
+	    if (method_exists($this, $method))
+	    {
+	        $this->$method($value);
+	    }
+    }
+
 	// GETTERS
 
 	public function id() {

@@ -2,6 +2,7 @@
 
 var form = document.querySelector("form");
 form.addEventListener("submit", function(e) {
+	
 	var mdp1 = form.elements.pass.value; 
 	var mdp2 = form.elements.pass_confirm.value;
 

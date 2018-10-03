@@ -32,8 +32,8 @@ h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .fra
 /* _______________ INTRODUCTION ________________ */
 
 #introduction img {
-	/*height: 300px;
-	width: 300px;*/
+	height: 200px;
+	width: 200px;
 	border-radius: 50%;
 	text-align: center;
 }

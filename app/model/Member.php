@@ -10,6 +10,24 @@ class Member {
 	private $_mail;
 	private $_subscribe_date;
 
+	public function __construct(array $donnees)
+  	{
+    	$this->hydrate($donnees);
+  	}
+
+  	// hydratation
+	public function hydrate(array $donnees)
+	{
+	    foreach ($donnees as $key => $value)
+	    {
+	      	$method = 'set'.ucfirst($key);
+	      
+	    if (method_exists($this, $method))
+	    {
+	        $this->$method($value);
+	    }
+    }
+
 	// GETTERS
 
 	public function id() {

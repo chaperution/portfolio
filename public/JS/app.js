@@ -92,9 +92,3 @@ function Github(userName, profilAPI, eventsAPI) {
 
 var myGithub = new Github("chaperution", document.getElementById("profilAPI"), document.getElementById("eventsAPI"));
 
-
-//https://api.github.com/repos/chaperution/portfolio/events
-//https://api.github.com/users/chaperution/events
-
-//"https://api.github.com/users/" + userName + "/events/public";
-//"https://api.github.com/repos/" + userName + "/" + repoName + "/events"

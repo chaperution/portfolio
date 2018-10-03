@@ -6,9 +6,27 @@ class Comment {
 
 	private $_id;
 	private $_id_post;
-	private $_author;
+	private $_id_member;
 	private $_content;
 	private $_comment_date;
+
+	public function __construct(array $donnees)
+  	{
+    	$this->hydrate($donnees);
+  	}
+
+  	// hydratation
+	public function hydrate(array $donnees)
+	{
+	    foreach ($donnees as $key => $value)
+	    {
+	      	$method = 'set'.ucfirst($key);
+	      
+	    if (method_exists($this, $method))
+	    {
+	        $this->$method($value);
+	    }
+    }
 
 	// GETTERS
 
@@ -20,8 +38,8 @@ class Comment {
 		return $this->_id_post;
 	}
 
-	public function author() {
-		return $this->_author;
+	public function id_member() {
+		return $this->_id_member;
 	}
 
 	public function content() {
@@ -50,8 +68,8 @@ class Comment {
 		}
 	}
 
-	public function setAuthor($author) {
-		$this->_author = $author;
+	public function setId_member($id_member) {
+		$this->_id_member = $id_member;
 	}
 
 	public function setContent($content) {

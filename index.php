@@ -35,8 +35,8 @@ try {
 		}
 		elseif ($_GET['action'] == 'addComment') {
 			if (isset($_GET['id']) && $_GET['id'] > 0) {
-	            if (!empty($_SESSION['pseudo']) && !empty($_POST['content'])) {
-	                $frontendController->addComment($_GET['id'], $_SESSION['pseudo'], $_POST['content']);
+	            if (!empty($_SESSION['id']) && !empty($_POST['content'])) {
+	                $frontendController->addComment($_GET['id'], $_SESSION['id'], $_POST['content']);
 	            }
 	            else {
                     throw new Exception('Tous les champs ne sont pas remplis !');

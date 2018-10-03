@@ -1,9 +1,8 @@
 Options +FollowSymlinks
 RewriteEngine On
-RewriteBase /admin/
 
 RewriteRule ^public/((?:\w|/|\.)*)$ ../public/$1 [L]
 AuthName "Page d'administration protegee"
 AuthType Basic
-AuthUserFile /homepages/16/d728528357/htdocs/clickandbuilds/portfolio/admin/.htpasswd
-Require valid-user 
+AuthUserFile C:\wamp64\www\portfolio\admin\.htpasswd
+Require valid-user

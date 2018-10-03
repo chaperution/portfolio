@@ -1,88 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="description" content="Portfolio - Charlotte Perution  - Développeuse web junior" />
-	<title>{% block title %}Charlotte Perution - Développeuse web junior{% endblock %}</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="public/CSS/style.css" />
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<link rel="icon" type="image/png" href="public/img/flavicon.png" />
-	<!-- Twitter Card data -->
-	<meta name="twitter:card" content="Charlotte Perution - Développeuse web junior">
-	<!-- Open Graph data -->
-	<meta property="og:title" content="Charlotte Perution  - Développeuse web junior" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://www.charlotteperution.fr" />
-	<meta property="og:image" content="public/img/profil.jpeg" />
-	<meta property="og:description" content="Charlotte Perution - Découvrez mon portfolio regroupant mes différents projets réalisés ainsi que mon CV"></script>
-</head>
-<body>
-	<header>
-			<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #45aaf2;">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-			    	<span class="navbar-toggler-icon"></span>
-			  	</button>
-				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-					{% if session is empty %}
-						<a class="navbar-brand " href="{{ globals.root }}index.php?action=login"><i class="fas fa-user"></i></i> Connexion</a>
-					{% else %}
-						<a class="navbar-brand " href="#"><i class="fas fa-user"></i> {{ session.pseudo }}</a>
-						<a class="navbar-brand " href="{{ globals.root }}index.php?action=logout"><i class="fas fa-user-times"></i> Déconnexion</a>
-					{% endif %}
-					<ul class="nav navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="{{ globals.root }}index.php"><i class="fas fa-home"></i> Accueil</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ globals.root }}index.php?action=listPosts"><i class="fas fa-book"></i> Portfolio</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ globals.root }}index.php#contact"><i class="fas fa-comments"></i> Contact</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-	</header>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Portfolio - Charlotte Perution  - Développeuse web junior" />
+		<title>{% block title %}Charlotte Perution - Développeuse web junior{% endblock %}</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="public/CSS/style.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<link rel="icon" type="image/png" href="public/img/flavicon.png" />
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="Charlotte Perution - Développeuse web junior">
+		<!-- Open Graph data -->
+		<meta property="og:title" content="Charlotte Perution  - Développeuse web junior" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://www.charlotteperution.fr" />
+		<meta property="og:image" content="public/img/profil.jpeg" />
+		<meta property="og:description" content="Charlotte Perution - Découvrez mon portfolio regroupant mes différents projets réalisés ainsi que mon CV">
+	</head>
 	<body>
-		<div class="container">
-			{% if get.accountStatus and get.accountStatus == 'account-successfully-created' %}
-				<p id="success">Votre compte a bien été créé. <a href="{{ globals.root }}index.php?action=login">Se connecter</a></p>
-			{% endif %}
-			{% if get.logout and get.logout == 'success' %}
-				<p id="success">Vous êtes bien deconnecté.</p>
-			{% endif %}
+		<header>
+				<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #45aaf2;">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				    	<span class="navbar-toggler-icon"></span>
+				  	</button>
+					<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+						{% if session is empty %}
+							<a class="navbar-brand " href="{{ globals.root }}index.php?action=login"><i class="fas fa-user"></i> Connexion</a>
+						{% else %}
+							<a class="navbar-brand " href="#"><i class="fas fa-user"></i> {{ session.pseudo }}</a>
+							<a class="navbar-brand " href="{{ globals.root }}index.php?action=logout"><i class="fas fa-user-times"></i> Déconnexion</a>
+						{% endif %}
+						<ul class="nav navbar-nav ml-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="{{ globals.root }}index.php"><i class="fas fa-home"></i> Accueil</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ globals.root }}index.php?action=listPosts"><i class="fas fa-book"></i> Portfolio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ globals.root }}index.php#contact"><i class="fas fa-comments"></i> Contact</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+		</header>
 
-	{% block body %}
-	{% endblock %}
+			<div class="container-fluid">
+				{% if get.accountStatus and get.accountStatus == 'account-successfully-created' %}
+					<p id="success">Votre compte a bien été créé. <a href="{{ globals.root }}index.php?action=login">Se connecter</a></p>
+				{% endif %}
+				{% if get.logout and get.logout == 'success' %}
+					<p id="success">Vous êtes bien deconnecté.</p>
+				{% endif %}
 
-		</div>
+		{% block body %}
+		{% endblock %}
+
+			</div>
+
+		<footer>
+			<div class="row">
+				<div class="col-lg-4">
+					<a href="{{ globals.root }}admin/index.php?action=admin-login-view">Administration</a><br>
+				</div>
+				<div class="col-lg-4">
+					<a href="https://www.linkedin.com/in/charlotte-perution-97b305167/"><i class="fab fa-linkedin fa-lg"></i></a>
+					<a href="https://github.com/chaperution"><i class="fab fa-github fa-lg"></i></a>
+				</div>
+				<div class="col-lg-4">
+					<a href="{{ globals.root }}index.php?action=privacy">Mentions légales</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Made by Charlotte with <i class="fas fa-heart fa-sm"></i></p>
+				</div>
+			</div>
+		</footer>
+		<script src="public/JS/ajax.js"></script>
+		<script src="public/JS/app.js"></script>
+		<script src="public/JS/flashMessage.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	</body>
-	<footer>
-		<div class="row">
-			<div class="col-lg-4">
-				<a href="{{ globals.root }}admin/index.php?action=admin-login-view">Administration</a><br>
-			</div>
-			<div class="col-lg-4">
-				<a href="https://www.linkedin.com/in/charlotte-perution-97b305167/"><i class="fab fa-linkedin fa-lg"></i></a>
-				<a href="https://github.com/chaperution"><i class="fab fa-github fa-lg"></i></a>
-			</div>
-			<div class="col-lg-4">
-				<a href="{{ globals.root }}index.php?action=privacy">Mentions légales</a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12">
-				<p>Made by Charlotte with <i class="fas fa-heart fa-sm"></i></p>
-			</div>
-		</div>
-	</footer>
-	<script src="public/JS/ajax.js"></script>
-	<script src="public/JS/app.js"></script>
-	<script src="public/JS/flashMessage.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-</body>
 </html>
