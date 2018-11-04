@@ -17,6 +17,10 @@ h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .fra
 	font-weight: bold;
 }
 
+.navbar-light .navbar-nav .nav-link:hover {
+	color: #45aaf2;
+}
+
 .navbar-nav {
 	margin-right: 80px;
 }
@@ -356,7 +360,7 @@ figure:hover img {
 /* __________________ FOOTER ________________ */
 
 footer {
-	background-color: #45aaf2;
+	background-color: #2c3e50;
 	padding: 20px;
 	margin-top: 20px;
 	text-align: center;
@@ -369,7 +373,7 @@ footer a, footer p {
 }
 
 footer a:hover {
-	color: #153348;
+	color: #45aaf2;
 	text-decoration: none;
 }
 
