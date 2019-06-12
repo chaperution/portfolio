@@ -1,6 +1,6 @@
 // Ajout de l'API Github avec profil utilisateur et liste des 5 derniers commits
 
-function Github(userName, profilAPI, eventsAPI) {
+/*function Github(userName, profilAPI, eventsAPI) {
 
 	var that = this;
 
@@ -91,4 +91,16 @@ function Github(userName, profilAPI, eventsAPI) {
 }
 
 var myGithub = new Github("chaperution", document.getElementById("profilAPI"), document.getElementById("eventsAPI"));
+*/
 
+
+/*$('a[href^="#"]').click(function () {
+	var the_id = $(this).attr("href");
+	if (the_id === '#') {
+		return;
+	}
+	$('html, body').animate({
+		scrollTop: $(the_id).offset().top
+	}, 'slow');
+	return false;
+});*/

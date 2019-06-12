@@ -2,58 +2,68 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="Portfolio - Charlotte Perution  - Développeuse web junior" />
-		<title>{% block title %}Charlotte Perution - Développeuse web junior{% endblock %}</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+		<meta name="description" content="Portfolio - Charlotte Perution  - Développeuse web PHP - Symfony" />
+		<title>{% block title %}Charlotte Perution - Développeuse web PHP - Symfony{% endblock %}</title>
+		<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 		<link rel="stylesheet" href="public/CSS/style.css" />
+		<link href="public/CSS/bootstrap.min.css" rel="stylesheet"/>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 		<link rel="icon" type="image/png" href="public/img/flavicon.png" />
 		<!-- Twitter Card data -->
-		<meta name="twitter:card" content="Charlotte Perution - Développeuse web junior">
+		<meta name="twitter:card" content="Charlotte Perution - Développeuse web PHP - Symfony">
 		<!-- Open Graph data -->
-		<meta property="og:title" content="Charlotte Perution  - Développeuse web junior" />
+		<meta property="og:title" content="Charlotte Perution  - Développeuse web PHP - Symfony" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="http://www.charlotteperution.fr" />
 		<meta property="og:image" content="public/img/profil.jpeg" />
-		<meta property="og:description" content="Charlotte Perution - Découvrez mon portfolio regroupant mes différents projets réalisés ainsi que mon CV">
+		<meta property="og:description" content="Charlotte Perution - Découvrez mon portfolio regroupant mes différents projets réalisés ainsi que mon CV et les services que je propose.">
 	</head>
 	<body>
 		<header>
-				<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2c3e50;">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-				    	<span class="navbar-toggler-icon"></span>
-				  	</button>
-					<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-						{% if session is empty %}
-							<a class="navbar-brand " href="{{ globals.root }}index.php?action=login"><i class="fas fa-user"></i> Connexion</a>
-						{% else %}
-							<a class="navbar-brand " href="#"><i class="fas fa-user"></i> {{ session.pseudo }}</a>
-							<a class="navbar-brand " href="{{ globals.root }}index.php?action=logout"><i class="fas fa-user-times"></i> Déconnexion</a>
-						{% endif %}
-						<ul class="nav navbar-nav ml-auto">
-							<li class="nav-item">
-								<a class="nav-link" href="{{ globals.root }}index.php"><i class="fas fa-home"></i> Accueil</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ globals.root }}index.php?action=listPosts"><i class="fas fa-book"></i> Portfolio</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ globals.root }}index.php#contact"><i class="fas fa-comments"></i> Contact</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
+			<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
+				<button aria-controls="#navbarColor01" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarColor01" data-toggle="collapse" type="button">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="#navbarColor01">
+
+					<!-- {% if session is empty %}
+						<a class="navbar-brand " href="{{ globals.root }}index.php?action=login"><i class="fas fa-user"></i> Connexion</a>
+					{% else %}
+						<a class="navbar-brand " href="#"><i class="fas fa-user"></i> {{ session.pseudo }}</a>
+						<a class="navbar-brand " href="{{ globals.root }}index.php?action=logout"><i class="fas fa-user-times"></i> Déconnexion</a>
+					{% endif %} -->
+					<ul class="nav navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="{{ globals.root }}index.php#head"><i class="fas fa-home"></i> Accueil</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ globals.root }}index.php#introduction">
+								<i class="fas fa-user-circle"></i> A propos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ globals.root }}index.php?action=listPosts"><i class="fas fa-book"></i> Portfolio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ globals.root }}index.php#services">
+								<i class="fas fa-wrench"></i> Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ globals.root }}index.php#contact"><i class="fas fa-comments"></i> Contact</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
 		</header>
 
-			<div class="container-fluid">
+			<!-- <div class="container-fluid">
 				{% if get.accountStatus and get.accountStatus == 'account-successfully-created' %}
 					<p id="success">Votre compte a bien été créé. <a href="{{ globals.root }}index.php?action=login">Se connecter</a></p>
 				{% endif %}
 				{% if get.logout and get.logout == 'success' %}
 					<p id="success">Vous êtes bien deconnecté.</p>
-				{% endif %}
+				{% endif %} -->
 
 		{% block body %}
 		{% endblock %}
@@ -68,6 +78,7 @@
 				<div class="col-lg-4">
 					<a href="https://www.linkedin.com/in/charlotte-perution-97b305167/"><i class="fab fa-linkedin fa-lg"></i></a>
 					<a href="https://github.com/chaperution"><i class="fab fa-github fa-lg"></i></a>
+					<a href="https://twitter.com/Charlotteper34"><i class="fab fa-twitter"></i></a>
 				</div>
 				<div class="col-lg-4">
 					<a href="{{ globals.root }}index.php?action=privacy">Mentions légales</a>
@@ -79,10 +90,12 @@
 				</div>
 			</div>
 		</footer>
+		<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<script src="public/JS/ajax.js"></script>
 		<script src="public/JS/app.js"></script>
 		<script src="public/JS/flashMessage.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		
 	</body>
 </html>

@@ -2,20 +2,37 @@
 
 {% block body %}
 
+	<section id="head">
+		<div id="container-image">
+			<img alt="photo présentation" src="public/img/image2"/>
+			<p class="head-intro">Une idée ? <br> Un projet de création de site web ? <br> Je vous propose mes services !</p>
+			<a id="scroll" href="{{ globals.root }}index.php#introduction">
+				<span>
+					<i class="fas fa-angle-double-down fa-2x"></i>
+				</span>
+			</a>
+		</div>
+	</section>
+
 	<section id="introduction">
+		<h2> A PROPOS </h2>
 		<div class="row">
 			<div class="col-lg-12" style="text-align: center;">
+			<br>
 				<img src="public/img/profil.jpeg" alt="photo de profil" />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
 				<h1>Charlotte Perution</h1>
-				<p><em>Développeuse web junior</em></p>
-				<p>Curieuse et passionnée par les nouvelles technologies, je me suis reconvertie dans le domaine du développement web. </br> L'apprentissage régulier dans ce domaine attise particulièrement ma curiosité à apprendre toujours de nouvelles choses. </br> J'aime relever des challenges qui sont une source de motivation pour moi. </br> Je recherche aujourd'hui un poste de <strong>développeuse web.</strong></p>
+				<p><em>Développeuse Fullstack</em></p>
+				<p>Curieuse et passionnée par les nouvelles technologies et le web, je me suis reconvertie dans le domaine du développement web. </br> 
+				L'apprentissage régulier dans ce domaine attise particulièrement ma curiosité à apprendre toujours de nouvelles choses. </br> 
+				J'aime relever des challenges qui sont une source de motivation pour moi.</p>
 			</div>
 		</div>
 	</section>
+
 
 	{% block frontend_body %}
 	{% endblock %}
