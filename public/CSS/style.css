@@ -117,11 +117,17 @@ span .fa-angle-double-down{
 
 /* _______________ INTRODUCTION ________________ */
 
-#introduction img {
+.logo img {
+	height: 150px;
+	width: 150px;
+	text-align: center;
+}
+
+.photo-profil img {
 	height: 200px;
 	width: 200px;
-	border-radius: 50%;
 	text-align: center;
+	border-radius: 50%;
 }
 
 #introduction, #services, #portfolio, #contact {
@@ -139,6 +145,12 @@ span .fa-angle-double-down{
 #introduction p {
 	font-size: 1.2em;
 }
+
+#introduction p strong {
+	color: #d48d6e;
+	font-weight: bold;
+}
+
 
 /* ___________________ CV __________________ */
 
