@@ -73,7 +73,7 @@ html {
 #scroll span {
 	position: absolute;
 	top: 80%;
-	right: 50%;
+	left: 920px;
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
@@ -81,14 +81,29 @@ html {
 	animation: scrollAnimation 1s infinite;
 }
 
-.head-intro {
+#head-intro, #head-titre {
 	position: absolute;
-	top: 50%;
-	left: 33%;
 	color: white;
-	font-size: 2em;
 	font-weight: bold;
 	text-align: center;
+	text-shadow: grey 1px 0 10px;
+}
+
+#head-intro {
+	top: 600px;
+	left: 650px;
+	font-size: 2em;
+	
+}
+
+#head-titre {
+	top: 250px;
+	left: 700px;
+}
+
+#head-titre p {
+	font-size: 2em;
+	font-style: italic;
 }
 
 
@@ -123,6 +138,10 @@ span .fa-angle-double-down{
 	text-align: center;
 }
 
+#introduction .row {
+	margin: 30px;
+}
+
 .photo-profil img {
 	height: 200px;
 	width: 200px;
@@ -139,17 +158,33 @@ span .fa-angle-double-down{
 }
 
 #introduction h1 {
-	font-size: 2.5em;
+	font-size: 2.7em;
 }
 
 #introduction p {
 	font-size: 1.2em;
+	padding: 35px;
 }
 
 #introduction p strong {
 	color: #d48d6e;
 	font-weight: bold;
 }
+
+#pannel1 {
+	position: relative;
+	left: -800px;
+}
+
+#pannel2 {
+	position: relative;
+	right: -800px;
+}
+
+.logo, .photo-profil {
+	position: absolute;
+}
+
 
 
 /* ___________________ CV __________________ */

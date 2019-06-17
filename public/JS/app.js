@@ -104,3 +104,23 @@ var myGithub = new Github("chaperution", document.getElementById("profilAPI"), d
 	}, 'slow');
 	return false;
 });*/
+
+
+/*var left = $('#pannel1').offset().left;
+
+$(window).ready(function() {
+	$("#pannel1").css({left:left}).animate({ left: "400px" }, "slow");
+});*/
+
+
+var hasMoved = false;
+$(window).scroll(function () {
+	let pannel1 = $('#pannel1');
+	let hauteurPannel1 = Number.parseInt(pannel1.css("height").substring(0, pannel1.css("height").length - 2));
+	if (!hasMoved && $('#pannel1').offset().top < $(window).scrollTop() + hauteurPannel1)
+	{
+		hasMoved = true;
+		pannel1.animate({ left: '-=' + pannel1.css("left") }, 2000);
+		$('#pannel2').animate({ right: '-=' + $('#pannel2').css("right") }, 2000);
+	}
+});
