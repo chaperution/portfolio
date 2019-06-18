@@ -120,7 +120,7 @@ $(window).scroll(function () {
 	if (!hasMoved && $('#pannel1').offset().top < $(window).scrollTop() + hauteurPannel1)
 	{
 		hasMoved = true;
-		pannel1.animate({ left: '-=' + pannel1.css("left") }, 2000);
-		$('#pannel2').animate({ right: '-=' + $('#pannel2').css("right") }, 2000);
+		pannel1.animate({ left: '-=' + pannel1.css("left") }, 1000);
+		$('#pannel2').animate({ right: '-=' + $('#pannel2').css("right") }, 1000);
 	}
 });

@@ -4,7 +4,7 @@
 h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .framePost p, 
 .post, #commentsFrame p, #commentForm p, #commentForm label, #commentForm button, .formBlock label,
  .formBlock small, .formBlock button, .form-group label, .formBlock a, #infoMdp, #error, #success, p,
- .cPageFrame, .pageBlock {
+ .cPageFrame, .pageBlock, .service p {
 	font-family: 'Roboto';
 }
 
@@ -185,7 +185,20 @@ span .fa-angle-double-down{
 	position: absolute;
 }
 
+/* ______________________ SERVICES ____________________ */
 
+#pannel-services {
+	padding: 15px;
+	margin: 70px 20px;
+}
+
+.service {
+	margin-bottom: 35px;
+}
+
+.service .fas {
+	color: #d48d6e;
+}
 
 /* ___________________ CV __________________ */
 
@@ -201,10 +214,6 @@ span .fa-angle-double-down{
 h2 {
 	color: #d48d6e;
 	font-size: 1.9em;
-}
-
-.fa-graduation-cap, .fa-code, .fa-comments .fa-2x, .fa-github{
-	margin-bottom: 40px;
 }
 
 h2:before, h2:after {
