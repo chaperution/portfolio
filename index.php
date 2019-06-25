@@ -78,7 +78,8 @@ try {
 			$frontendController->sendContact();
 		}
 	} else {
-		$frontendController->displayHome();
+		$frontendController->listPosts();
+		//$frontendController->displayHome();
 	}
 }
 catch(Exception $e) {
