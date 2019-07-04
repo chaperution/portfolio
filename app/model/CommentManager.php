@@ -9,8 +9,16 @@ class CommentManager extends Database {
     {
         $comments = $this->db->prepare("SELECT comments.id AS id, id_post, members.pseudo AS author, content, DATE_FORMAT(comment_date, '%d/%m/%Y %H:%i:%s') AS date_fra FROM comments LEFT JOIN members ON members.id = comments.id_member WHERE id_post = ? ORDER BY comment_date DESC LIMIT ".intval($cPage).", ".intval($commentsPerPage));
         $comments->execute(array($id_post));
+        $commentList = array();
+        $className = "Comment";
+        while($line = $comments->fetch(PDO::FETCH_ASSOC)) {
+            $comment = new $className();
+            $comment->hydrate($line);
+            $commentList[] = $comment;
+        }
+        var_dump($commentList);
 
-        return $comments;
+        return $commentList;
     }
 
     public function getAllComments() {

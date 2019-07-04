@@ -7,21 +7,21 @@ require_once("Database.php");
 class PostManager extends Database {
 
 	public function getPosts() {
-		$req = $this->db->query('SELECT id, title, content, DATE_FORMAT(creation_date, "%d/%m/%Y %H:%i:%s") AS date_fr, DATE_FORMAT(update_date, "%d/%m/%Y %H:%i:%s") AS update_date_fr, post_image FROM posts ORDER BY creation_date DESC');
+		$req = $this->db->query('SELECT id, title, content, resume, url, DATE_FORMAT(creation_date, "%d/%m/%Y %H:%i:%s") AS date_fr, DATE_FORMAT(update_date, "%d/%m/%Y %H:%i:%s") AS update_date_fr, post_image FROM posts ORDER BY creation_date DESC');
 		return $req;
 	}
 
 	public function getPost($postId) {
-		$req = $this->db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, "%d/%m/%Y %H:%i:%s") AS date_fr, DATE_FORMAT(update_date, "%d/%m/%Y %H:%i:%s") AS update_date_fr, post_image  FROM posts WHERE id = ?');
+		$req = $this->db->prepare('SELECT id, title, content, resume, url, DATE_FORMAT(creation_date, "%d/%m/%Y %H:%i:%s") AS date_fr, DATE_FORMAT(update_date, "%d/%m/%Y %H:%i:%s") AS update_date_fr, post_image  FROM posts WHERE id = ?');
         $req->execute(array($postId));
         $post = $req->fetch();
         return $post;
 	}
 
 	// création d'un nouveau post dans la table Post
-    public function createPost($title, $content) {
-        $req = $this->db->prepare('INSERT INTO posts(title, content, creation_date, update_date) VALUES (?, ?, NOW(), NOW())');
-        $newPost = $req->execute(array($title, $content));
+    public function createPost($title, $content, $resume, $url) {
+        $req = $this->db->prepare('INSERT INTO posts(title, content, resume, url, creation_date, update_date) VALUES (?, ?, ?, ?, NOW(), NOW())');
+        $newPost = $req->execute(array($title, $content, $resume, $url));
 
         if ($newPost === false) {
         	return false;
@@ -39,9 +39,9 @@ class PostManager extends Database {
     }
 
     // envoie la modification du post en fonction de son ID et en ajoutant une date de modification
-    public function updatePost($title, $content, $postId) {
-        $req = $this->db->prepare('UPDATE posts SET title = ?, content = ?, update_date = NOW() WHERE id = ?');
-        $updated = $req->execute(array($title, $content, $postId));
+    public function updatePost($title, $content, $resume, $url, $postId) {
+        $req = $this->db->prepare('UPDATE posts SET title = ?, content = ?, resume = ?, url = ?, update_date = NOW() WHERE id = ?');
+        $updated = $req->execute(array($title, $content, $resume, $url, $postId));
 
         return $updated;
     }

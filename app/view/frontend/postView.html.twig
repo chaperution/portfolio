@@ -1,6 +1,6 @@
-{% extends "frontend/layout.html.twig" %}
+{% extends "layout.html.twig" %}
 
-{% block frontend_body %}
+{% block body %}
 
 	<section class="framePost">
 		<div class="row" style="justify-content: space-around">
@@ -23,7 +23,7 @@
 				<div class="post">{{ post.content|raw }}</div>
 			</div>
 		</div>
-		<div class="row" style="justify-content: space-around">
+		<!-- <div class="row" style="justify-content: space-around">
 			<div class="col-lg-6 col-md-12">
 				<div id="commentsFrame">
 					<h3>Commentaires : </h3>
@@ -70,7 +70,7 @@
 				</div>
 				{% endif %}
 			</div>
-		</div>
+		</div> -->
 	</section>
 
 {% endblock %}

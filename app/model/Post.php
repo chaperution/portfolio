@@ -7,6 +7,8 @@ class Post {
 	private $_id;
 	private $_title;
 	private $_content;
+	private $_resume;
+	private $_url;
 	private $_creation_date;
 	private $_update_date;
 	private $_post_image;
@@ -43,6 +45,15 @@ class Post {
 		return $this->_content;
 	}
 
+	public function resume()
+	{
+		return $this->_resume;
+	}
+	public function url()
+	{
+		return $this->_url;
+	}
+
 	public function creation_date() {
 		return $this->_creation_date;
 	}
@@ -71,6 +82,16 @@ class Post {
 
 	public function setContent($content) {
 		$this->_content = $content;
+	}
+
+	public function setResume($resume)
+	{
+		$this->_resume = $resume;
+	}
+
+	public function setUrl($url)
+	{
+		$this->_url = $url;
 	}
 
 	public function setCreation_date($creation_date) {

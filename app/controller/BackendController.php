@@ -60,7 +60,7 @@ class BackendController {
 	}
 
 	// permet la création d'un nouveau post avec ajout de l'image
-	public function newPost($title, $content, $post_image) {
+	public function newPost($title, $content, $resume, $url, $post_image) {
 		$postManager = new PostManager();
 
 		if (isset($_FILES['upload'])  AND !empty($_FILES['upload']['name'])){
@@ -69,7 +69,7 @@ class BackendController {
 			if ($_FILES['upload']['size'] <= $maxSize) {
 				$extensionUpload = strtolower(substr(strrchr($_FILES['upload']['name'], '.'), 1));
 				if (in_array($extensionUpload, $validExtensions)) {
-					$id = $postManager->createPost($title, $content);
+					$id = $postManager->createPost($title, $content, $resume, $url);
 					if ($id !== false)
 					{
 						$root = "../public/img/upload/" . $id . "." . $extensionUpload;
@@ -121,10 +121,10 @@ class BackendController {
 		));
 	}
 
-	public function submitUpdate($title, $content, $postId, $post_image) {
+	public function submitUpdate($title, $content, $resume, $url, $postId, $post_image) {
 		$postManager = new PostManager();
 
-		$result = $postManager->updatePost($title, $content, $postId);
+		$result = $postManager->updatePost($title, $content, $resume, $url, $postId);
 		if ($result !== false) {
 			if (isset($_FILES['upload'])  AND !empty($_FILES['upload']['name'])){
 				// supprime l'ancien fichier

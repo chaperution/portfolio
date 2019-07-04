@@ -33,8 +33,8 @@ try {
 			$backendController->displayCreatePost();
 		}
 		elseif ($_GET['action'] == 'submitPost') {
-			if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['upload']['name'])) {
-				$backendController->newPost($_POST['title'], $_POST['content'], $_FILES['upload']['name']);
+			if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['resume']) && !empty($_POST['url']) && !empty($_FILES['upload']['name'])) {
+				$backendController->newPost($_POST['title'], $_POST['content'], $_POST['resume'], $_POST['url'], $_FILES['upload']['name']);
 			} else {
 				throw new Exception('Contenu vide !');
 			}
@@ -52,7 +52,7 @@ try {
 			}
 		}
 		elseif ($_GET['action'] == 'submitUpdate') {
-			$backendController->submitUpdate($_POST['title'], $_POST['content'], $_GET['id'], $_FILES['upload']['name']);
+			$backendController->submitUpdate($_POST['title'], $_POST['content'], $_POST['resume'], $_POST['url'], $_GET['id'], $_FILES['upload']['name']);
 		}
 		elseif ($_GET['action'] == 'deleteComment') {
 			$backendController->removeComment($_GET['id']);
