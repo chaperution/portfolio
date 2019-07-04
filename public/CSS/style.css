@@ -150,7 +150,7 @@ span .fa-angle-double-down{
 }
 
 #introduction, #services, #portfolio, #contact {
-	margin-top:60px;
+	margin-top:40px;
 }
 
 #introduction h1, #introduction p {
@@ -187,10 +187,10 @@ span .fa-angle-double-down{
 
 /* ______________________ SERVICES ____________________ */
 
-#pannel-services {
+/*#pannel-services {
 	padding: 15px;
 	margin: 70px 20px;
-}
+}*/
 
 .service {
 	margin-bottom: 35px;
@@ -202,13 +202,14 @@ span .fa-angle-double-down{
 
 /* ___________________ CV __________________ */
 
-#introduction, #services, #portfolio, #contact, #privacyFrame, #contactFrame h3 {
+#introduction, #services, #portfolio, #contact, #privacyFrame {
 	text-align: center;
-	padding: 65px 0 65px 0;
+	padding: 60px 18px 49px 60px;
 }
 
-#skills, #contact {
+.contact {
 	background-color: #dfe6e9;
+	padding: 20px 30px;
 }
 
 h2 {
@@ -236,9 +237,12 @@ h4 {
 
 }
 
-#skills p, #education p, #contact p {
-	font-size: 1.2em;
+#skills p, #education p{
 	font-style: italic;
+}
+
+#contact p, #skills p, #education p {
+	font-size: 1.2em;
 }
 
 .row {
@@ -251,7 +255,7 @@ h4 {
 
 #contact a {
 	text-decoration: none;
-	color: #45aaf2;
+	color: #d48d6e;
 }
 
 #profilAPI {
@@ -437,7 +441,7 @@ figure:hover img {
 }
 
 #dashboardLogin {
-	margin: 50px 0 50px 0;
+	padding: 70px 0 50px 0;
 }
 
 #dashboardLogin h1 {
@@ -453,7 +457,7 @@ figure:hover img {
 #postManage h3, #commentManage h3, #memberManage h3 {
 	font-size: 1.8em;
 	font-weight: bold;
-	color: #45aaf2;
+	color: #d48d6e;
 }
 
 .listPanel {

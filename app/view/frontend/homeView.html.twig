@@ -37,7 +37,7 @@
 				<br>
 				<br>
 				<p>Je suis
-					<strong>développeuse et intégratrice spécialisée Symfony et Wordpress</strong>
+					<strong>développeur web Freelance spécialisée en Symfony et Wordpress</strong>
 					sur Montpellier.
 					<br>
 					Curieuse et passionnée par les nouvelles technologies et le web, je me suis reconvertie dans le domaine du développement web après des études juridiques.
@@ -218,67 +218,48 @@
 		</div>
 	</section>
 
-
-
-<!--
-	<section id="skills">
-		<h2> MES COMPÉTENCES </h2>
-		<i class="fas fa-code fa-2x"></i>
-		<div class="row">
-			<div class="col-sm-4">
-				<h3><i class="fas fa-angle-right"></i> Langages</h3>
-				<p>HTML, CSS (Bootstrap, SASS)</p>
-				<p>Javascript</p>
-				<p>PHP</p>
-				<p>Symfony 4</p>
-				<p>MySQL</p>
-			</div>
-			<div class="col-sm-4">
-				<h3><i class="fas fa-angle-right"></i> Outils</h3>
-				<p>CMS (Wordpress)</p>
-				<p>Git et Github</p>
-				<p>Sublim Text 3</p>
-				<p>Visual Studio Code</p>
-			</div>
-			<div class="col-sm-4">
-				<h3><i class="fas fa-angle-right"></i> Savoir-être</h3>
-				<p>Sens de l'organisation</p>
-				<p>Capacité d'adaptation</p>
-				<p>Curiosité</p>
-				<p>Autonomie</p>
-			</div>
-		</div>
-	</section>
-
-	<section id="education">
-		<h2> MES FORMATIONS </h2>
-		<i class="fas fa-graduation-cap fa-2x"></i>
-		<div class="row">
-			<div class="col-lg-12">
-				<h3>Développeur intégrateur en réalisation d'applications web - 2018</h3>
-				<p>OpenClassrooms</p>
-			</div>
-			<div class="col-lg-12">
-				<h3>Master 1 Droit public général - 2014</h3>
-				<p>Université Montpellier I</p>
-			</div>
-		</div>
-	</section>
-	-->
-
 	<section id="contact">
 		<h2> CONTACT </h2>
-		<i class="fas fa-comments fa-2x"></i>
-		<div class="row">
-			<div class="col-lg-12">
-				<p>Si mon profil vous intéresse, contactez moi ! <i class="far fa-smile"></i></p>
-				<span>Par email : </span>
-				<p><em>contact@charlotteperution.fr</em></p>
-				<span>Ou via le formulaire de contact qui se trouve <a href="index.php?action=contact">ici</a> !</span>
+		<br>
+		<div class="row" style="justify-content: center">
+			<div class="col-lg-4">
+				<div class="contact">
+					<br>
+					<p>
+						Pour toutes demandes d'informations ou de devis, vous pouvez me contacter
+						<br>
+						via ce formulaire ou directement via mon adresse mail
+						<em>contact@charlotteperution.fr</em>
+					</p>
+					<br>
+					{% if get.sendContact and get.sendContact == 'success' %}
+						<p id="success">Votre message a bien été envoyé !</p>
+					{% elseif get.sendContact and get.sendContact == 'error' %}
+						<p id="error">Tous les champs ne sont pas remplies !</p>
+					{% endif %}
+					<div class="formBlock">
+						<form action="index.php?action=sendContact" method="post">
+							<div class="form-group">
+								<label for="nom">Votre nom</label><br/>
+								<input class="form-control form-control-lg" id="nom" name="nom" required type="text"/></br>
+						</div>
+						<div class="form-group">
+							<label for="mail">Votre Adresse mail</label><br/>
+							<input aria-describedby="emailHelp" class="form-control form-control-lg" id="mail" name="mail" required type="email"/><br/>
+							<small class="form-text text-muted" id="emailHelp">Votre adresse mail ne sera pas utilisée en dehors de ce site.</small>
+						</div>
+						<div class="form-group">
+							<label for="message">Votre message :</label>
+							<br>
+								<textarea class="form-control" id="message" name="message" rows="3"></textarea>
+							</br>
+						</div>
+						<button class="btn btn-primary btn-lg" name="mailform" style="background-color: #d48d6e!important; border:#d48d6e" type="submit">Envoyer</button>
+					</form>
+				</div>
 			</div>
 		</div>
-	</section>
-
+	</div></section>
 
 <!--
 	<section id="github">
