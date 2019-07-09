@@ -73,12 +73,13 @@ html {
 #scroll span {
 	position: absolute;
 	top: 80%;
-	left: 920px;
+	left: 50%;
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
 	/*border: 1px solid white;*/
 	animation: scrollAnimation 1s infinite;
+	
 }
 
 #head-intro, #head-titre {
@@ -91,14 +92,14 @@ html {
 
 #head-intro {
 	top: 600px;
-	left: 650px;
+	left: 35%;
 	font-size: 2em;
 	
 }
 
 #head-titre {
 	top: 250px;
-	left: 700px;
+	left: 38%;
 }
 
 #head-titre p {
@@ -110,6 +111,7 @@ html {
 #scroll{
 	text-decoration: none;
 	color: black;
+	cursor: pointer;
 }
 
 span .fa-angle-double-down{
@@ -153,13 +155,10 @@ span .fa-angle-double-down{
 	margin-top:40px;
 }
 
-#introduction h1, #introduction p {
+#introduction p {
 	text-align: center;
 }
 
-#introduction h1 {
-	font-size: 2.7em;
-}
 
 #introduction p {
 	font-size: 1.2em;
@@ -544,86 +543,121 @@ footer a:hover {
 		margin-left: 0;
 	}
 
+	/* _______________________ HEAD ____________________ */
+
+	#head img {
+		height: auto;
+		max-width: 100%;
+	}
+
+	#scroll span {
+		display: none;
+	}
+
+	#head-intro {
+		top: 60%;
+		left: 15%;
+		font-size: 4vw;
+	}
+
+	#head-titre {
+		top: 30%;
+		left: 20%;
+	}
+
+	#head-titre p {
+		font-size: 4vw;
+	}
+
+	#head-titre h1 {
+		font-size: 5vw;
+	}
+
+	#container-image {
+		margin: 0 auto;
+	}
+
+
 	/* _______________ INTRODUCTION ________________ */
 
-	#introduction h1 {
-		font-size: 2em;
+	.logo img {
+		height: 100px;
+		width: 100px;
+	}
+	
+	.photo-profil img {
+		height: 200px;
+		width: 200px;
+	}
+
+	#introduction, #services, #portfolio, #contact {
+		margin-top:40px;
 	}
 
 	#introduction p {
-		font-size: 1.1em;
+		font-size: 4vw;
+		padding: 0;
 	}
+
+	#introduction .row {
+		margin: 5px;
+	}
+
+	#pannel1 {
+		left: 0;
+	}
+
+	#pannel2 {
+		right: 0px;
+	}
+
 
 	/* ___________________ CV __________________ */
 
 	h2 {
-		font-size: 1.4em;
-	}
-
-	.fa-graduation-cap, .fa-code, .fa-comments .fa-2x, .fa-github{
-		margin-bottom: 25px;
-	}
-
-	h2:before, h2:after {
-		width: 20px;
-	}
-
-	h3 {
-		font-size: 1.2em;
-	}
-
-	h4 {
-		font-size: 1.2em;
-	}
-
-	#skills p, #education p, #contact p {
-		font-size: 1.2em;
-		font-style: italic;
-	}
-
-	#contact span {
-		font-size: 1.2em;
-	}
-
-	/* ________________ PORTFOLIO _________________ */
-
-	.framePost, #commentsFrame {
-	 	margin: 25px 0 25px 0;
-	}
-
-	.framePost img {
-		margin: 10px 0 10px 0;
-	}
-
-	.head-full-post h3 {
-		font-size: 2em;
-	}
-
-	.projets h3 {
 		font-size: 1.5em;
 	}
 
+	h2:before, h2:after {
+		display: none;
+	}
+
+	h3 {
+		font-size: 1vw;
+	}
+
+	h4 {
+		font-size: 1vw;
+	}
+
+	#introduction, #services, #portfolio, #contact, #privacyFrame {
+		padding: 60px 18px 25px 18px;
+	}
+
+	#contact p, #skills p, #education p {
+		font-size: 1.2em;
+	}
+
+	.row {
+		margin: 0 0 20px 0;
+	}
+
+
+	/* ________________ PORTFOLIO _________________ */
+
+	.projets h3 {
+		font-size: 3vw;
+	}
+
 	.btn {
-		margin: 10px 5px 10px 5px;
+		margin: 5px 5px 5px 5px;
+		font-size: 2vw!important;
 	}
 
-	#commentForm textarea {
-		min-height: 100px;
+	.projets p {
+	font-size: 1.7vw;
 	}
 
-	#pageFrame {
-		padding: 10px;
-	}
-
-	/* _______________ LOGIN/SIGN ________________*/
-
-	#loginFrame, #subscribeFrame {
-		margin: 20px;
-	}
-
-	.formBlock a {
-		font-size: 1em;
-	}
 
 	/* ___________________ DASHBOARD ___________________ */
 
@@ -666,28 +700,74 @@ footer a:hover {
 /* _________________TABLETTE_________________ */
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
+	
+	/* _______________________ HEAD ____________________ */
+
+	#head img {
+		height: auto;
+		max-width: 100%;
+	}
+
+	#scroll span {
+		display: none;
+	}
+
+	#head-intro {
+		top: 60%;
+		left: 15%;
+		font-size: 4vw;
+	}
+
+	#head-titre {
+		top: 30%;
+		left: 20%;
+	}
+
+	#head-titre p {
+		font-size: 4vw;
+	}
+
+	#head-titre h1 {
+		font-size: 5vw;
+	}
+
+	#container-image {
+		margin: 0 auto;
+	}
+	#scroll span {
+		top: 85%;
+		left: 50%;
+	}
+
+	/* _______________ INTRO __________ */
+
+	.logo img {
+		margin: 5px;
+	}
+
+	#introduction {
+		padding: 60px 10px 50px 10px;
+	}
+
+	
 	/* ___________________ CV __________________ */
 
 	h2:before, h2:after {
-		width: 40px;
+		display: none;
 	}
 
 	/* ________________ PORTFOLIO _________________ */
 
-	.framePost, #commentsFrame {
-	 	margin: 30px 0 30px 0;
-	}
-
 	.projets h3 {
-		font-size: 1.7em;
+		font-size: 3vw;
 	}
 
-	#commentForm textarea {
-		min-height: 150px;
+	.btn {
+		margin: 10px 5px 10px 5px;
 	}
-	
-	.head-full-post img {
-		max-width: 70%;
+
+	.projets p {
+	font-size: 2vw;
 	}
 
 	/* ___________________ DASHBOARD ___________________ */
@@ -732,19 +812,90 @@ footer a:hover {
 		margin-right: 20px;
 	}
 
-	/* ________________ PORTFOLIO _________________ */
+	/* _________________ HEAD ____________ */
 
-	.projets h3 {
-		font-size: 1.8em;
-	}
-	
-	.head-full-post img {
+	#head img {
+		height: auto;
 		max-width: 100%;
 	}
 
-	#commentForm textarea {
-		min-height: 200px;
+	#head-intro {
+		top: 60%;
+		left: 15%;
+		font-size: 4vw;
 	}
+
+	#head-titre {
+		top: 30%;
+		left: 20%;
+	}
+
+	#head-titre p {
+		font-size: 4vw;
+	}
+
+	#head-titre h1 {
+		font-size: 5vw;
+	}
+
+	#container-image {
+		margin: 0 auto;
+	}
+
+	#scroll span {
+		top: 80%;
+		left: 50%;
+	}
+
+
+
+	/* _______________ INTRODUCTION ________________ */
+
+	.logo img {
+		height: 100px;
+		width: 100px;
+	}
+	
+	.photo-profil img {
+		height: 200px;
+		width: 200px;
+	}
+
+	#introduction, #services, #portfolio, #contact {
+		margin-top:40px;
+	}
+
+	#introduction p {
+		font-size: 2vw;
+		padding: 0;
+	}
+
+	#introduction .row {
+		margin: 5px;
+	}
+
+	#pannel1 {
+		left: -800px;
+	}
+
+	#pannel2 {
+		right: -800px;
+	}
+
+	/* ________________ PORTFOLIO _________________ */
+
+	.projets h3 {
+		font-size: 2vw;
+	}
+
+	.btn {
+		margin: 10px 5px 10px 5px;
+	}
+
+	.projets p {
+	font-size: 1.5vw;
+	}
+
 
 	/* ___________________ DASHBOARD ___________________ */
 
@@ -756,5 +907,63 @@ footer a:hover {
 
 	#privacyFrame {
 		padding: 50px;
+	}
+}
+
+/* _____________________ LAPTOP 1400 px ________________________ */
+@media all and (min-width: 1250px) and (max-width: 1600px) {
+	
+	/* ___________________ HEAD ___________________ */
+
+	#head-intro {
+		top: 60%;
+		left: 23%;
+		font-size: 3vw;
+	}
+
+	#head-titre {
+		top: 30%;
+		left: 20%;
+	}
+
+	#head-titre p {
+		font-size: 3vw;
+	}
+
+	#head-titre h1 {
+		font-size: 5vw;
+	}
+
+	#container-image {
+		margin: 0 auto;
+	}
+
+	#scroll span {
+		top: 80%;
+		left: 50%;
+	}
+
+	/* _____________ INTRO _________ */
+
+	.logo img {
+		margin: 5px;
+	}
+
+	#introduction {
+		padding: 60px 15px 50px 15px;
+	}
+
+	/* ________________ PORTFOLIO _________________ */
+
+	.projets h3 {
+		font-size: 3vw;
+	}
+
+	.btn {
+		margin: 10px 5px 10px 5px;
+	}
+
+	.projets p {
+	font-size: 1.5vw;
 	}
 }
