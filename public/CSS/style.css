@@ -4,7 +4,7 @@
 h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .framePost p, 
 .post, #commentsFrame p, #commentForm p, #commentForm label, #commentForm button, .formBlock label,
  .formBlock small, .formBlock button, .form-group label, .formBlock a, #infoMdp, #error, #success, p,
- .cPageFrame, .pageBlock, .service p {
+ .cPageFrame, .pageBlock, .service p, .introSection, .services-line h3, .services-line em {
 	font-family: 'Roboto';
 }
 
@@ -197,6 +197,56 @@ span .fa-angle-double-down{
 
 .service .fas {
 	color: #d48d6e;
+}
+
+.introSection {
+	font-size: 1.3em;
+	color: #595756;
+}
+
+.frame-services {
+	display: flex;
+}
+
+.right-column, .left-column {
+	list-style: none;
+}
+
+.right-column {
+	text-align: right;
+}
+
+.left-column {
+	text-align: left;
+}
+
+.li-right, .li-left {
+	display: flex;
+}
+
+.icon {
+	height: 50px;
+	width: 50px;
+	color: #d48d6e;
+	display: flex;
+	margin: 10px;
+}
+
+.icon i {
+	margin: auto;
+}
+
+.services-line h3 {
+	font-size: 1.5em;
+}
+
+.services-line em {
+	font-size: 1.2em;
+	color: #343a40;
+}
+
+.services-line {
+	width: 85%;
 }
 
 /* ___________________ CV __________________ */
@@ -637,6 +687,8 @@ footer a:hover {
 	#contact p, #skills p, #education p {
 		font-size: 1.2em;
 	}
+
+	
 
 	.row {
 		margin: 0 0 20px 0;

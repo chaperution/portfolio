@@ -26,7 +26,7 @@ try {
 		elseif ($_GET['action'] == 'listPosts') {
 			$frontendController->listPosts();
 		}
-		elseif ($_GET['action'] == 'post') {
+		/*elseif ($_GET['action'] == 'post') {
 			if (isset($_GET['id']) && $_GET['id'] > 0 && is_numeric($_GET['id'])) {
 				$frontendController->post();
 			} else {
@@ -67,7 +67,7 @@ try {
 		}
 		elseif ($_GET['action'] == 'logout') {
 			$frontendController->logout();
-		}
+		}*/
 		elseif ($_GET['action'] == 'privacy') {
 			$frontendController->displayPrivacy();
 		}
