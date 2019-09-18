@@ -4,8 +4,8 @@
 h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .framePost p, 
 .post, #commentsFrame p, #commentForm p, #commentForm label, #commentForm button, .formBlock label,
  .formBlock small, .formBlock button, .form-group label, .formBlock a, #infoMdp, #error, #success, p,
- .cPageFrame, .pageBlock, .service p, .introSection, .services-line h3, .services-line em {
-	font-family: 'Roboto';
+ .cPageFrame, .pageBlock, .service p, .introSection, .services-line h3, .services-line em, strong, p, a {
+	font-family: 'Roboto'!important;
 }
 
 html {
@@ -199,7 +199,7 @@ span .fa-angle-double-down{
 	color: #d48d6e;
 }
 
-.introSection {
+.intro-section {
 	font-size: 1.3em;
 	color: #595756;
 }
@@ -242,7 +242,7 @@ span .fa-angle-double-down{
 
 .services-line em {
 	font-size: 1.2em;
-	color: #343a40;
+	color: #595756;
 }
 
 .services-line {
@@ -251,9 +251,9 @@ span .fa-angle-double-down{
 
 /* ___________________ CV __________________ */
 
-#introduction, #services, #portfolio, #contact, #privacyFrame {
+#introduction, #services, #portfolio, #contact, #privacyFrame, #formules {
 	text-align: center;
-	padding: 60px 18px 49px 60px;
+	padding: 60px 18px 49px 18px;
 }
 
 .contact {
@@ -445,6 +445,56 @@ figure:hover img {
 #pageFrame {
 	padding: 20px;
 	text-align: center;
+}
+
+/*_______________ FORMULES __________________ */
+
+.frame-formules {
+	border: 2px solid #595756;
+	border-radius: 20px;
+	margin-right: 30px;
+	padding: 15px;
+}
+
+.frame-formules h3 {
+	font-size: 1.5em;
+	color: #d48d6e;
+}
+
+#container-formules .row {
+	justify-content: center;
+}
+
+#container-formules {
+	margin-top: 7px;
+}
+
+.list-formule {
+	list-style: none;
+	padding-inline-start: 0;
+}
+
+.list-formule li {
+	font-size: 1em;
+	margin-bottom: 3px;
+}
+
+.button-formule {
+	border: 1px solid #d48d6e!important;
+	border-radius: 20px!important;
+	background-color: #d48d6e!important;
+	padding: 12px!important;
+	font-size: 1.1em!important;
+}
+
+.details-formule {
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.price {
+	font-size: 1.4em;
 }
 
 /* _______________ LOGIN/SIGN ________________*/
