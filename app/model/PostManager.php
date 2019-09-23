@@ -58,4 +58,22 @@ class PostManager extends Database {
         return $deletedPost;
     }
 
+    // stocke la clé secrète transmise par google pour le captcha
+    public function getSecretKey()
+    {
+        $secretKey = '6LfD77kUAAAAAN2RqhTPXggkHgoXzP-Ookxv0V75';
+
+        return $secretKey;
+    }
+
+    // vérification par google du captcha avec le token généré et la clé secrète
+    public function getReCaptcha($token)
+    {
+        $secretKey = $this->getSecretKey();
+        $request = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey . '&response=' . $token . '');
+        $response = json_decode($request);
+
+        return $response;
+    }
+
 }

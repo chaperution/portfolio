@@ -4,7 +4,7 @@
 h1, #introduction p, h2, h3, #skills p, #education p, #contact p, span, h4, .framePost p, 
 .post, #commentsFrame p, #commentForm p, #commentForm label, #commentForm button, .formBlock label,
  .formBlock small, .formBlock button, .form-group label, .formBlock a, #infoMdp, #error, #success, p,
- .cPageFrame, .pageBlock, .service p, .introSection, .services-line h3, .services-line em, strong, p, a {
+ .cPageFrame, .pageBlock, .service p, .introSection, .services-line h3, .services-line em, strong, p, a, em {
 	font-family: 'Roboto'!important;
 }
 
@@ -249,7 +249,7 @@ span .fa-angle-double-down{
 	width: 85%;
 }
 
-/* ___________________ CV __________________ */
+/* ___________________ CV / CONTACT __________________ */
 
 #introduction, #services, #portfolio, #contact, #privacyFrame, #formules {
 	text-align: center;
@@ -259,6 +259,79 @@ span .fa-angle-double-down{
 .contact {
 	background-color: #dfe6e9;
 	padding: 20px 30px;
+	margin: 0 60px 0 60px;
+}
+
+.phone, .mail, .town, .reseaux {
+	padding-bottom: 35px;
+}
+
+.contact-details .fa-mobile-alt, .contact-details .fa-envelope-square, .contact-details .fa-map-marker-alt {
+	color: #d48d6e;
+}
+
+.contact strong {
+	font-weight: bold;
+	color: #c24053;
+	font-size: 1.4em;
+}
+
+.formBlock {
+	padding-left: 20px;
+}
+
+.formBlock label {
+	font-size: 1.2em;
+}
+
+.contact-details {
+	padding:20px;
+	margin-left: 40px;
+	text-align: left;
+}
+
+.contact-details h4 {
+	color: #343a40;
+	font-size: 1.3em;
+}
+
+.contact-details em {
+	font-size: 1.1em;
+}
+.form-control {
+	background-color: #dfe6e9!important;
+	font-weight: normal;
+	border-top: 1px solid #dfe6e9!important;
+	border-bottom: 1px solid #343a40!important;
+	border-right: 1px solid #dfe6e9!important;
+	border-left: 1px solid #dfe6e9!important;
+	text-decoration: none!important;
+	
+}
+
+
+/*.form-control:focus {
+	outline: none!important;
+}*/
+
+.reseaux .fa-github, .reseaux .fa-linkedin, .reseaux .fa-twitter, .reseaux .fa-facebook-square {
+	padding-right: 15px;
+}
+
+.reseaux .fa-github {
+	color: black;
+}
+
+.reseaux .fa-linkedin {
+	color: #0077B5;
+}
+
+.reseaux .fa-twitter {
+	color: #1DA1F2;
+}
+
+.reseaux .fa-facebook-square {
+	color: #3C5A99;
 }
 
 h2 {
@@ -304,7 +377,6 @@ h4 {
 
 #contact a {
 	text-decoration: none;
-	color: #d48d6e;
 }
 
 #profilAPI {
@@ -390,7 +462,7 @@ figure:hover img {
 	border: 1px #45aaf2 solid;
 }
 
-.btn {
+.btn{
 	margin: 20px 5px 20px 5px;
 }
 
@@ -496,6 +568,13 @@ figure:hover img {
 .price {
 	font-size: 1.4em;
 }
+
+.frame-formules:hover {
+	transform: scale(1.1);
+	background-color: #e6ebed;
+}
+
+
 
 /* _______________ LOGIN/SIGN ________________*/
 
