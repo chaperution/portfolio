@@ -61,7 +61,7 @@ class PostManager extends Database {
     // stocke la clé secrète transmise par google pour le captcha
     public function getSecretKey()
     {
-        $secretKey = '6LfD77kUAAAAAN2RqhTPXggkHgoXzP-Ookxv0V75';
+        $secretKey = '';
 
         return $secretKey;
     }
