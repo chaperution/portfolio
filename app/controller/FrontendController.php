@@ -150,7 +150,7 @@ class FrontendController {
 
 	public function sendContact() {
 		if (isset($_POST['mailform']))  {
-			if (!empty($_POST['nom']) && !empty($_POST['mail']) && !empty($_POST['message'])) {
+			if (!empty($_POST['nom']) && !empty($_POST['mail']) && !empty($_POST['message']) && !empty($_POST['consent'])) {
 				if ($reCaptcha->success == true) {
 					// Récupération des variables et sécurisation des données
 					// htmlentities() convertit des caractères "spéciaux" en équivalent HTML
@@ -180,7 +180,7 @@ class FrontendController {
 					header('Location: index.php?action=contact&sendContact=success');
 				}
 			} else {
-				header('Location: index.php?action=contact&sendContact=error');
+				header('Location: index.php?sendContact=error#contact');
 			}
 		}		
 	}
