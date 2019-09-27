@@ -92,7 +92,7 @@ html {
 
 #head-intro {
 	top: 600px;
-	left: 35%;
+	left: 38%;
 	font-size: 2em;
 	
 }
@@ -156,14 +156,11 @@ span .fa-angle-double-down{
 }
 
 #introduction p {
-	text-align: center;
-}
-
-
-#introduction p {
+	text-align: justify;
 	font-size: 1.2em;
 	padding: 35px;
 }
+
 
 #introduction p strong {
 	color: #d48d6e;
@@ -739,7 +736,7 @@ footer a:hover {
 
 	#head-intro {
 		top: 60%;
-		left: 15%;
+		left: 20%;
 		font-size: 4vw;
 	}
 
@@ -794,6 +791,28 @@ footer a:hover {
 		right: 0px;
 	}
 
+	/* ______________________ SERVICES ____________________ */
+
+	.services-line h3 {
+		font-size: 1.2em;
+	}
+
+	.services-line em {
+		font-size: 1em;
+		color: #595756;
+	}
+
+	.intro-section {
+		font-size: 1.1em;
+	}
+
+	.right-column {
+		margin-bottom: 23px;
+	}
+
+	.right-column, .left-column {
+		padding: 0;
+	}
 
 	/* ___________________ CV __________________ */
 
@@ -831,16 +850,36 @@ footer a:hover {
 	/* ________________ PORTFOLIO _________________ */
 
 	.projets h3 {
-		font-size: 3vw;
+		font-size: 5vw;
 	}
 
 	.btn {
 		margin: 5px 5px 5px 5px;
-		font-size: 2vw!important;
+		font-size: 3vw!important;
 	}
 
 	.projets p {
-	font-size: 1.7vw;
+		font-size: 3vw;
+	}
+
+	/*_______________ FORMULES __________________ */
+
+	.frame-formules {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+
+	.button-formule {
+		border: 1px solid #d48d6e!important;
+		border-radius: 20px!important;
+		background-color: #d48d6e!important;
+		padding: 12px!important;
+		font-size: 1.1em!important;
+	}
+
+	.frame-formules:hover {
+		transform: none;
+		background-color: white;
 	}
 
 
@@ -865,6 +904,37 @@ footer a:hover {
 	.imgBdd {
 		max-width: 100%;
 	}
+
+	/* _________________ CONTACT ________________ */
+
+	.contact {
+		padding: 5px;
+		margin: 0;
+	}
+
+	.formBlock {
+		padding: 5px;
+	}
+
+	.contact-details {
+		margin-left: 0;
+		text-align: center;
+	}
+
+	.form-control {
+		background-color: #dfe6e9!important;
+		font-weight: normal;
+		border-top: 1px solid #dfe6e9!important;
+		border-bottom: 1px solid #343a40!important;
+		border-right: 1px solid #dfe6e9!important;
+		border-left: 1px solid #dfe6e9!important;
+		text-decoration: none!important;	
+	}
+
+	.g-recaptcha div:first-child {
+		margin: auto;
+	}
+
 
 	/* __________________ FOOTER ________________ */
 
@@ -899,7 +969,7 @@ footer a:hover {
 
 	#head-intro {
 		top: 60%;
-		left: 15%;
+		left: 20%;
 		font-size: 4vw;
 	}
 
@@ -944,15 +1014,39 @@ footer a:hover {
 	/* ________________ PORTFOLIO _________________ */
 
 	.projets h3 {
-		font-size: 3vw;
+		font-size: 3.5vw;
 	}
 
 	.btn {
-		margin: 10px 5px 10px 5px;
+		margin: 5px 5px 5px 5px;
+		font-size: 3vw!important;
 	}
 
 	.projets p {
 	font-size: 2vw;
+	}
+
+	/*_______________ FORMULES __________________ */
+
+	.frame-formules {
+		margin-right: 20px;
+		margin-left: 20px;
+		padding: 7px;
+		margin-bottom: 10px
+	}
+
+	.button-formule {
+		border: 1px solid #d48d6e!important;
+		border-radius: 20px!important;
+		background-color: #d48d6e!important;
+		padding: 12px!important;
+		font-size: 1.1em!important;
+	}
+
+
+	.frame-formules:hover {
+		transform: none;
+		background-color: white;
 	}
 
 	/* ___________________ DASHBOARD ___________________ */
@@ -968,6 +1062,38 @@ footer a:hover {
 	.imgBdd {
 		max-width: 100%;
 	}
+
+	/* _______________ CONTACT __________________ */
+
+	.contact {
+		padding: 30px;
+	}
+
+	.formBlock {
+		padding-left: 0;
+	}
+
+	.contact-details {
+		padding:20;
+		margin-left: 0;
+		text-align: center;
+	}
+
+	.form-control {
+		background-color: #dfe6e9!important;
+		font-weight: normal;
+		border-top: 1px solid #dfe6e9!important;
+		border-bottom: 1px solid #343a40!important;
+		border-right: 1px solid #dfe6e9!important;
+		border-left: 1px solid #dfe6e9!important;
+		text-decoration: none!important;
+		
+	}
+
+	.g-recaptcha div:first-child {
+		margin: auto;
+	}
+
 
 	/* __________________ FOOTER ________________ */
 
@@ -1006,7 +1132,7 @@ footer a:hover {
 
 	#head-intro {
 		top: 60%;
-		left: 15%;
+		left: 20%;
 		font-size: 4vw;
 	}
 
@@ -1031,8 +1157,6 @@ footer a:hover {
 		top: 80%;
 		left: 50%;
 	}
-
-
 
 	/* _______________ INTRODUCTION ________________ */
 
@@ -1081,6 +1205,45 @@ footer a:hover {
 	font-size: 1.5vw;
 	}
 
+	/*_______________ FORMULES __________________ */
+
+	.frame-formules {
+		margin-right: 20px;
+		padding: 15px;
+	}
+
+	.button-formule {
+		border: 1px solid #d48d6e!important;
+		border-radius: 20px!important;
+		background-color: #d48d6e!important;
+		padding: 12px!important;
+		font-size: 1.1em!important;
+	}
+
+	.frame-formules:hover {
+		transform: scale(1.1);
+		background-color: #e6ebed;
+	}
+
+	/*_________________ CONTACT ______________ */
+
+	.contact {
+		margin: 0 30px 0 30px;
+	}
+
+	.formBlock {
+		padding-left: 0;
+	}
+
+	.contact-details {
+		padding:10px;
+		margin-left: 20px;
+	}
+
+	.reseaux .fa-github, .reseaux .fa-linkedin, .reseaux .fa-twitter, .reseaux .fa-facebook-square {
+		padding-right: 5px;
+	}
+
 
 	/* ___________________ DASHBOARD ___________________ */
 
@@ -1102,17 +1265,17 @@ footer a:hover {
 
 	#head-intro {
 		top: 60%;
-		left: 23%;
-		font-size: 3vw;
+		left: 25%;
+		font-size: 4vw;
 	}
 
 	#head-titre {
 		top: 30%;
-		left: 20%;
+		left: 25%;
 	}
 
 	#head-titre p {
-		font-size: 3vw;
+		font-size: 4vw;
 	}
 
 	#head-titre h1 {
@@ -1150,5 +1313,25 @@ footer a:hover {
 
 	.projets p {
 	font-size: 1.5vw;
+	}
+
+	/*_______________ FORMULES __________________ */
+
+	.frame-formules {
+		margin-right: 20px;
+		padding: 15px;
+	}
+
+	.button-formule {
+		border: 1px solid #d48d6e!important;
+		border-radius: 20px!important;
+		background-color: #d48d6e!important;
+		padding: 12px!important;
+		font-size: 1.1em!important;
+	}
+
+	.frame-formules:hover {
+		transform: scale(1.1);
+		background-color: #e6ebed;
 	}
 }

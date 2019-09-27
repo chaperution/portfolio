@@ -177,7 +177,7 @@ class FrontendController {
 	
 					mail($this->_myMail, $this->_subjectMail , $message, $header);
 	
-					header('Location: index.php?action=contact&sendContact=success');
+					header('Location: index.php?sendContact=success#contact');
 				}
 			} else {
 				header('Location: index.php?sendContact=error#contact');
