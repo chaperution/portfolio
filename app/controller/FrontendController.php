@@ -149,20 +149,24 @@ class FrontendController {
 	}
 
 	public function sendContact() {
+		$postManager = new PostManager();
+		$reCaptcha = $postManager->getReCaptcha($_POST['g-recaptcha-response']);
+
 		if (isset($_POST['mailform']))  {
-			if (!empty($_POST['nom']) && !empty($_POST['mail']) && !empty($_POST['message']) && !empty($_POST['consent'])) {
-				if ($reCaptcha->success == true) {
+			if ($reCaptcha->success == true) {
+				if (!empty($_POST['nom']) && !empty($_POST['mail']) && !empty($_POST['message']) && !empty($_POST['consent'])) {
+			
 					// Récupération des variables et sécurisation des données
 					// htmlentities() convertit des caractères "spéciaux" en équivalent HTML
 					$nom     = htmlentities($_POST['nom']); 
 					$email   = htmlentities($_POST['mail']);
 					$message = htmlentities($_POST['message']);
-	
+
 					$header = "MIME-Version: 1.0\r\n";
 					$header.= $this->_headerFrom."\n";
 					$header.='Content-Type:text/html; charset="utf-8"'."\n";
 					$header.='Content-Tranfer-Encoding: 8bit';
-	
+
 					$message = '
 						<html>
 							<body>
@@ -174,10 +178,13 @@ class FrontendController {
 							</body>
 						</html>
 					';
-	
+
 					mail($this->_myMail, $this->_subjectMail , $message, $header);
-	
+
 					header('Location: index.php?sendContact=success#contact');
+					
+				} else {
+					header('Location: index.php?sendContact=error#contact');
 				}
 			} else {
 				header('Location: index.php?sendContact=error#contact');

@@ -416,7 +416,7 @@ h4 {
 .projets h3 {
 	color:#d48d6e;
 	font-weight: bold;
-	font-size: 2.5em;
+	font-size: 2em;
 }
 
 .projets p {
@@ -850,16 +850,16 @@ footer a:hover {
 	/* ________________ PORTFOLIO _________________ */
 
 	.projets h3 {
-		font-size: 5vw;
+		font-size: 3.8vw;
 	}
 
-	.btn {
+	.discover {
 		margin: 5px 5px 5px 5px;
-		font-size: 3vw!important;
+		font-size: 3.2vw!important;
 	}
 
 	.projets p {
-		font-size: 3vw;
+		font-size: 2.7vw;
 	}
 
 	/*_______________ FORMULES __________________ */
@@ -867,6 +867,11 @@ footer a:hover {
 	.frame-formules {
 		margin-right: 0;
 		margin-bottom: 10px;
+	}
+
+	.list-formule li {
+		font-size: 0.9em;
+		margin-bottom: 2px;
 	}
 
 	.button-formule {
@@ -952,9 +957,27 @@ footer a:hover {
 
 }
 
+/* _________________________ MOBILE 2 ___________________*/
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+	.projets h3 {
+		font-size: 2.8vw;
+	}
+
+	.discover {
+		margin: 0!important;
+		font-size: 1.8vw!important;
+		padding: 5px 16px!important;
+	}
+
+	.projets p {
+	font-size: 1.8vw;
+	}
+}
+
 /* _________________TABLETTE_________________ */
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (min-width: 768px) and (max-width: 991px) {
 	
 	/* _______________________ HEAD ____________________ */
 
@@ -1017,9 +1040,9 @@ footer a:hover {
 		font-size: 3.5vw;
 	}
 
-	.btn {
+	.discover {
 		margin: 5px 5px 5px 5px;
-		font-size: 3vw!important;
+		font-size: 2vw!important;
 	}
 
 	.projets p {
@@ -1033,6 +1056,11 @@ footer a:hover {
 		margin-left: 20px;
 		padding: 7px;
 		margin-bottom: 10px
+	}
+
+	.list-formule li {
+		font-size: 0.9em;
+		margin-bottom: 2px;
 	}
 
 	.button-formule {
@@ -1103,6 +1131,24 @@ footer a:hover {
 
 	#privacyFrame {
 		padding: 20px;
+	}
+}
+
+/* __________________ TABLETTE 2 ________________ */
+
+@media all and (min-width: 992px) and (max-width: 1024px) {
+	.projets h3 {
+		font-size: 2vw;
+	}
+
+	.discover {
+		margin: 0!important;
+		font-size: 1.8vw!important;
+		padding: 5px 16px!important;
+	}
+
+	.projets p {
+	font-size: 1.6vw;
 	}
 }
 
@@ -1197,8 +1243,10 @@ footer a:hover {
 		font-size: 2vw;
 	}
 
-	.btn {
-		margin: 10px 5px 10px 5px;
+	.discover {
+		margin: 0!important;
+		font-size: 1.8vw!important;
+		padding: 5px 16px!important;
 	}
 
 	.projets p {
@@ -1210,6 +1258,11 @@ footer a:hover {
 	.frame-formules {
 		margin-right: 20px;
 		padding: 15px;
+	}
+
+	.list-formule li {
+		font-size: 1em;
+		margin-bottom: 2px;
 	}
 
 	.button-formule {
@@ -1304,11 +1357,12 @@ footer a:hover {
 	/* ________________ PORTFOLIO _________________ */
 
 	.projets h3 {
-		font-size: 3vw;
+		font-size: 2vw;
 	}
 
-	.btn {
-		margin: 10px 5px 10px 5px;
+	.discover {
+		margin: 0!important;
+		font-size: 1.5vw!important;
 	}
 
 	.projets p {
@@ -1333,5 +1387,24 @@ footer a:hover {
 	.frame-formules:hover {
 		transform: scale(1.1);
 		background-color: #e6ebed;
+	}
+}
+
+/* _________ ECRAN PLUS PETIT PC _______ */
+
+@media all and (min-width: 1601px) and (max-width: 1724px) {
+	/* ________________ PORTFOLIO _________________ */
+
+	.projets h3 {
+		font-size: 2vw;
+	}
+
+	.discover {
+		margin: 0!important;
+		font-size: 1.5vw!important;
+	}
+
+	.projets p {
+	font-size: 1.5vw;
 	}
 }

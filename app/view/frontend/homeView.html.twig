@@ -228,7 +228,7 @@
 									<p>Technos utilisées :</p>
 									<p>{{ post.resume }}</p>
 									<!-- button découvrir le projet -->
-									<a aria-pressed="true" class="btn btn-primary btn-lg active" target="_blank" href="{{ post.url }}" role="button">Découvrir</a>
+									<a aria-pressed="true" class="btn btn-primary btn-lg active discover" target="_blank" href="{{ post.url }}" role="button">Découvrir</a>
 								</figcaption>
 							</figure>
 						</div>
@@ -379,12 +379,12 @@
 										</br>
 									</div>
 									<div class="form-check">
-										<input type="checkbox" class="form-check-input" id="consent">
+										<input type="checkbox" class="form-check-input" name="consent" id="consent">
 										<label class="form-check-label" for="consent">En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans 
 										le cadre de la relation commerciale qui peut en découler.</label>
 									</div>
 									<br>
-									<div class="g-recaptcha" data-sitekey="6LfD77kUAAAAAHcsjRdAfL-H5d8qdIkVlHgmw7Zy"></div>
+									<div class="g-recaptcha" data-sitekey=""></div>
 									<br>
 									<button class="btn btn-primary btn-lg" name="mailform" style="background-color: #d48d6e!important; border:#d48d6e; font-size:1.2em;" type="submit">Envoyer</button>
 								</form>

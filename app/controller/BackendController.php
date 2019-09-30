@@ -64,7 +64,7 @@ class BackendController {
 		$postManager = new PostManager();
 
 		if (isset($_FILES['upload'])  AND !empty($_FILES['upload']['name'])){
-			$maxSize = 2097152; // 2Mo
+			$maxSize = 3000000; // 3Mo
 			$validExtensions = array('jpg', 'jpeg', 'png');
 			if ($_FILES['upload']['size'] <= $maxSize) {
 				$extensionUpload = strtolower(substr(strrchr($_FILES['upload']['name'], '.'), 1));
@@ -130,7 +130,7 @@ class BackendController {
 				// supprime l'ancien fichier
 	        	foreach (glob($GLOBALS['root']. "public/img/upload/" .$postId .".*") as $filename) 
 					unlink($filename);
-				$maxSize = 2097152; // 2Mo
+				$maxSize = 3000000; // 3Mo
 				if ($_FILES['upload']['size'] <= $maxSize) {
 					$extensionUpload = strtolower(substr(strrchr($_FILES['upload']['name'], '.'), 1));
 					$validExtensions = array('jpg', 'jpeg', 'png');
